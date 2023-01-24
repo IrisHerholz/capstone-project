@@ -1,4 +1,6 @@
 import { useState } from "react";
+import React from "react";
+
 export default function Landingpage() {
   const [entry, setEntry] = useState("");
   const [message, setMessage] = useState("");
