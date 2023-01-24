@@ -1,4 +1,3 @@
-import React, { use } from "react";
 import { useState } from "react";
 import styled from "styled-components";
 
@@ -15,14 +14,12 @@ export default function Landingpage() {
   return (
     <>
       <container>
-        <Title>Your Travel Journal App</Title>
+        <Title>Your Travel Journal</Title>
         <Form
           onSubmit={handleSubmit}
-          aria-labelledby="Where is yout jouney going?"
+          aria-labelledby="Where is your journey going?"
         >
-          <p>Where is the journey going?</p>
-
-          <Label htmlFor="name">City or Country?</Label>
+          <Label htmlFor="text">City or Country?</Label>
           <input
             type="text"
             required
