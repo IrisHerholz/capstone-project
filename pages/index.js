@@ -1,3 +1,4 @@
+import JournalEntryList from "@/components/JournalEntryList";
 import styled from "styled-components";
 
 export default function HomePage() {
@@ -6,6 +7,7 @@ export default function HomePage() {
       <header>
         <H1>Your Travel Journal</H1>
       </header>
+      <JournalEntryList />
     </>
   );
 }

@@ -1,4 +1,4 @@
-import { titles } from "../lib/data.json";
+import { titles } from "/lib/data.js";
 import styled from "styled-components";
 import { v4 as uuidv4 } from "uuid";
 
