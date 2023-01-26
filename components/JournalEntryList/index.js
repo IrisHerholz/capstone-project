@@ -31,5 +31,6 @@ const Li = styled.li`
   top: 30px;
 `;
 const Ul = styled.li`
+  position: relative;
   top: 30px;
 `;
