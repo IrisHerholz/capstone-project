@@ -1,7 +1,6 @@
-import JournalEntryList from "@/components/JournalEntryList";
 import styled from "styled-components";
-import React from "react";
 import { useState } from "react";
+import JournalEntryList from "@/components/JournalEntryList";
 
 export default function Landingpage() {
   const [output, setOutput] = useState("");
@@ -14,8 +13,10 @@ export default function Landingpage() {
     <>
       <container>
         <Title>Your Travel Journal</Title>
-        <Form onSubmit={handleSubmit}>
-          <legend>Where is the journey going?</legend>
+        <Form
+          onSubmit={handleSubmit}
+          aria-labelledby="Where is your journey going?"
+        >
           <Label htmlFor="text">City or Country?</Label>
           <input
             type="text"
@@ -60,5 +61,8 @@ const Button = styled.button`
   border-radius: 3px;
   margin: 2px;
   padding: 0.5px;
+<<<<<<< HEAD
+>>>>>>> main
+=======
 >>>>>>> main
 `;
