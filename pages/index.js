@@ -1,3 +1,10 @@
+import JournalEntryList from "@/components/JournalEntryList";
+
 export default function HomePage() {
-  return <h1>Hello from Next.js</h1>;
+  return (
+    <section>
+      <h1>Your Travel Journal</h1>
+      <JournalEntryList />
+    </section>
+  );
 }

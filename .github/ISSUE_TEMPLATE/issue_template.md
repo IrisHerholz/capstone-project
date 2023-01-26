@@ -2,7 +2,7 @@
 name: Userstory template
 about: |
   A template to create user stories.
-  Remove all ... and examples before posting.
+[label](../../components/Entrylist/index.js)  Remove all ... and examples before posting.
 labels: enhancement
 ---
 
@@ -10,7 +10,7 @@ labels: enhancement
 
 **As a** ... (User, Author, logged in User...)  
 **I want to** ... (describe the goal)  
-**so that** ... (describe the reason)  
+**so that** ... (describe the reason)
 
 ## Description
 
