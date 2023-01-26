@@ -4,18 +4,17 @@ import { v4 as uuidv4 } from "uuid";
 
 export default function JournalEntryList() {
   return (
-    <>
+    <artcle>
       <header>
         <H1>Your Entries</H1>
       </header>
-      <main>
-        <ul>
-          {titles.map((title) => (
-            <li key={uuidv4()}>{title.name}</li>
-          ))}
-        </ul>
-      </main>
-    </>
+      <section>
+        {titles.map((title) => {
+          return;
+          <li key={uuidv4()}>{title.date}</li>;
+        })}
+      </section>
+    </artcle>
   );
 }
 
