@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { useState } from "react";
-import JournalEntryList from "@/components/JournalEntryList";
 
 export default function Landingpage() {
   const [output, setOutput] = useState("");
@@ -30,7 +29,6 @@ export default function Landingpage() {
           </Form>
         </fieldset>
       </container>
-      <JournalEntryList />
     </>
   );
 }
