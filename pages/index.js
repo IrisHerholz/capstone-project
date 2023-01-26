@@ -1,15 +1,13 @@
-import { useState } from "react";
 import styled from "styled-components";
+import React from "react";
+import { useState } from "react";
 
 export default function Landingpage() {
-  const [entry, setEntry] = useState("");
-  const [message, setMessage] = useState("");
-
+  const [output, setOutput] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    setMessage(entry);
-    setEntry("");
+    const entry = event.target.elements.text.value;
+    setOutput(entry);
   };
   return (
     <>
@@ -24,13 +22,11 @@ export default function Landingpage() {
             type="text"
             required
             id="text"
-            name="entry"
-            value={entry}
+            name="text"
             placeholder="enter your destination..."
-            onChange={(event) => setEntry(event.target.value)}
           />
           <Button type="submit">Submit</Button>
-          <h2>{message}</h2>
+          <p>{output}</p>
         </Form>
       </container>
     </>
