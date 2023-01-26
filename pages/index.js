@@ -13,21 +13,22 @@ export default function Landingpage() {
     <>
       <container>
         <Title>Your Travel Journal</Title>
-        <Form
-          onSubmit={handleSubmit}
-          aria-labelledby="Where is your journey going?"
-        >
-          <Label htmlFor="text">City or Country?</Label>
-          <input
-            type="text"
-            required
-            id="text"
-            name="text"
-            placeholder="enter your destination..."
-          />
-          <Button type="submit">Submit</Button>
-          <p>{output}</p>
-        </Form>
+        <fieldset>
+          {" "}
+          <Form onSubmit={handleSubmit}>
+            <legend>Where is your journey going?</legend>
+            <Label htmlFor="text">City or Country?</Label>
+            <input
+              type="text"
+              required
+              id="text"
+              name="text"
+              placeholder="enter your destination..."
+            />
+            <Button type="submit">Submit</Button>
+            <p>{output}</p>
+          </Form>
+        </fieldset>
       </container>
       <JournalEntryList />
     </>
@@ -61,8 +62,4 @@ const Button = styled.button`
   border-radius: 3px;
   margin: 2px;
   padding: 0.5px;
-<<<<<<< HEAD
->>>>>>> main
-=======
->>>>>>> main
 `;

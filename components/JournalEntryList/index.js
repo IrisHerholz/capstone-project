@@ -30,7 +30,7 @@ const Li = styled.li`
   position: relative;
   top: 30px;
 `;
-const Ul = styled.li`
+const Ul = styled.ul`
   position: relative;
   top: 30px;
 `;
