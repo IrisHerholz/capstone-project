@@ -1,12 +1,6 @@
 import styled from "styled-components";
 import { useState } from "react";
-import Link from "next/link";
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
+import { useRouter } from "next/router";
 
 const Title = styled.h1`
   font-size: 1.5em;
@@ -38,6 +32,7 @@ const Button = styled.button`
 `;
 
 export default function Landingpage() {
+  const router = useRouter();
   const [output, setOutput] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -46,27 +41,26 @@ export default function Landingpage() {
   };
   return (
     <>
-      <Container>
-        <Title>Your Travel Journal</Title>
+      <Title>Your Travel Journal</Title>
+      <Form onSubmit={handleSubmit}>
         <fieldset>
-          <Form onSubmit={handleSubmit}>
-            <legend>Where is your journey going?</legend>
-            <label htmlFor="text">City or Country?</label>
-            <input
-              type="text"
-              required
-              id="text"
-              name="text"
-              placeholder="enter your destination..."
-            />
-            <Button type="submit">Submit</Button>
-            <p>{output}</p>
-          </Form>
+          <legend>Where is your journey going?</legend>
+          <Label htmlFor="text">City or Country?</Label>
+          <input
+            type="text"
+            required
+            id="text"
+            name="text"
+            placeholder="enter your destination..."
+          />
+          <Button type="submit">Submit</Button>
+          <p>{output}</p>
         </fieldset>
-      </Container>
-      <Link href="/">
+      </Form>
+
+      <button onClick={() => router.push("/EntryListPage")}>
         <p>Entrylist</p>
-      </Link>
+      </button>
     </>
   );
 }

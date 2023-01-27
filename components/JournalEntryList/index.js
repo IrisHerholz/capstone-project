@@ -8,17 +8,17 @@ export default function JournalEntryList() {
         <H1>Your Entries</H1>
       </header>
       <main>
-        <Ul>
+        <EntryItem>
           {titles.map((title) => (
-            <Li key={title.date}>
+            <ListItem key={title.date}>
               Date: {title.date}
               <br />
               Title: {title.entrytitle}
               <br />
               Name: {title.name}
-            </Li>
+            </ListItem>
           ))}
-        </Ul>
+        </EntryItem>
       </main>
     </>
   );
@@ -28,11 +28,11 @@ const H1 = styled.h1`
   position: relative;
   top: 30px;
 `;
-const Li = styled.li`
+const ListItem = styled.li`
   position: relative;
   top: 30px;
 `;
-const Ul = styled.ul`
+const EntryItem = styled.ul`
   position: relative;
   top: 30px;
 `;

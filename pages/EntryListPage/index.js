@@ -5,7 +5,7 @@ export default function EntryListPage() {
   return (
     <>
       <Link href="/">
-        <a>Home</a>
+        <p>Home</p>
       </Link>
       <h1>Entries</h1>
       <JournalEntryList />
