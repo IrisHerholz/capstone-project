@@ -28,17 +28,21 @@ export default function JournalEntryList() {
 const Heading = styled.h1`
   position: relative;
   top: 20px;
-  font-size: 1.5em;
+  font-size: 2em;
   text-align: center;
 `;
 const ListItem = styled.li`
+  display: grid;
   position: relative;
   font-size: 1em;
   text-align: center;
+  list-style-position: inside;
+  background: lightgray;
+  margin: 2px;
 `;
 const EntryList = styled.ul`
   position: relative;
-  top: 20px;
   font-size: 1em;
   text-align: center;
+  list-style-type: circle;
 `;

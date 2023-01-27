@@ -30,13 +30,15 @@ const Button = styled.button`
   border-radius: 3px;
   margin: 2px;
   padding: 0.5px;
+  display: center;
+  text-align: center;
 `;
 
 const StyledLink = styled.p`
-  font-size: 1.5em;
-  text-decoration: underline;
-  border-bottom: black;
+  display: center;
   text-align: center;
+  font-size: 2em;
+  color: blue;
 `;
 
 export default function Landingpage() {
@@ -65,10 +67,9 @@ export default function Landingpage() {
           <p>{output}</p>
         </fieldset>
       </Form>
-
-      <StyledLink onClick={() => router.push("/EntryListPage")}>
-        <p>Entrylist</p>
-      </StyledLink>
+      <Link href="/EntryListPage">
+        <StyledLink>Your Entries</StyledLink>
+      </Link>
     </>
   );
 }
