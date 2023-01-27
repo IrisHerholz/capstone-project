@@ -4,10 +4,7 @@ import Link from "next/link";
 export default function EntryListPage() {
   return (
     <>
-      {" "}
-      <Link href="/">
-        <p>Back</p>
-      </Link>
+      <Link href="/">Back</Link>
       <JournalEntryList />
     </>
   );

@@ -71,10 +71,8 @@ export default function Landingpage() {
   return (
     <>
       <Header>
-        {" "}
         <h1>Travel Journal</h1>
       </Header>
-
       <Form onSubmit={handleSubmit}>
         <Fieldset>
           <Legend>Where is your journey going?</Legend>
@@ -90,9 +88,7 @@ export default function Landingpage() {
           <p>{output}</p>
         </Fieldset>
       </Form>
-      <Link href="/EntryListPage">
-        <p>Your Entries</p>
-      </Link>
+      <Link href="/EntryListPage">Your Entries</Link>
     </>
   );
 }
