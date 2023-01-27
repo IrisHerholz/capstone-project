@@ -5,7 +5,7 @@ export default function JournalEntryList() {
   return (
     <>
       <header>
-        <H1>Your Entries</H1>
+        <Heading>Your Entries</Heading>
       </header>
       <main>
         <EntryItem>
@@ -13,9 +13,9 @@ export default function JournalEntryList() {
             <ListItem key={title.date}>
               Date: {title.date}
               <br />
-              Title: {title.entrytitle}
+              Entrytitle: {title.entrytitle}
               <br />
-              Name: {title.name}
+              Journalentry: {title.name}
             </ListItem>
           ))}
         </EntryItem>
@@ -24,15 +24,21 @@ export default function JournalEntryList() {
   );
 }
 
-const H1 = styled.h1`
+const Heading = styled.h1`
   position: relative;
-  top: 30px;
+  top: 20px;
+  font-size: 1.5em;
+  text-align: center;
 `;
 const ListItem = styled.li`
   position: relative;
-  top: 30px;
+  font-size: 1em;
+  text-align: center;
+  gap: 2em;
 `;
 const EntryItem = styled.ul`
   position: relative;
-  top: 30px;
+  top: 20px;
+  font-size: 1em;
+  text-align: center;
 `;
