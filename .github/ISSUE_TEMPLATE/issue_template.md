@@ -2,7 +2,6 @@
 name: Userstory template
 about: |
   A template to create user stories.
-[label](../../components/Entrylist/index.js)  Remove all ... and examples before posting.
 labels: enhancement
 ---
 

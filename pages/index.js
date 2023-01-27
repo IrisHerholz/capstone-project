@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const Title = styled.h1`
   font-size: 1.5em;
@@ -31,6 +32,13 @@ const Button = styled.button`
   padding: 0.5px;
 `;
 
+const StyledLink = styled.p`
+  font-size: 1.5em;
+  text-decoration: underline;
+  border-bottom: black;
+  text-align: center;
+`;
+
 export default function Landingpage() {
   const router = useRouter();
   const [output, setOutput] = useState("");
@@ -58,9 +66,9 @@ export default function Landingpage() {
         </fieldset>
       </Form>
 
-      <button onClick={() => router.push("/EntryListPage")}>
+      <StyledLink onClick={() => router.push("/EntryListPage")}>
         <p>Entrylist</p>
-      </button>
+      </StyledLink>
     </>
   );
 }

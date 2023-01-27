@@ -1,5 +1,6 @@
 import { titles } from "/lib/data.js";
 import styled from "styled-components";
+import { v4 as uuidv4 } from "uuid";
 
 export default function JournalEntryList() {
   return (
@@ -8,17 +9,17 @@ export default function JournalEntryList() {
         <Heading>Your Entries</Heading>
       </header>
       <main>
-        <EntryItem>
+        <EntryList>
           {titles.map((title) => (
-            <ListItem key={title.date}>
+            <ListItem key={uuidv4()}>
               Date: {title.date}
               <br />
-              Entrytitle: {title.entrytitle}
+              Entrytitle: {title.entryTitle}
               <br />
               Journalentry: {title.name}
             </ListItem>
           ))}
-        </EntryItem>
+        </EntryList>
       </main>
     </>
   );
@@ -34,9 +35,8 @@ const ListItem = styled.li`
   position: relative;
   font-size: 1em;
   text-align: center;
-  gap: 2em;
 `;
-const EntryItem = styled.ul`
+const EntryList = styled.ul`
   position: relative;
   top: 20px;
   font-size: 1em;
