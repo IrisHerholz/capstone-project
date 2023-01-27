@@ -12,12 +12,11 @@ const Header = styled.header`
 `;
 
 const Form = styled.form`
-  background-color: #78c9cc;
+  color: black;
   display: grid;
   width: 70%;
   margin: 5px auto;
   padding: 10px;
-background-image: linear-gradient(to top, white 0%, #D6546D 50%)
   border-radius: 5px;
   text-align: center;
 `;
@@ -73,7 +72,7 @@ export default function Landingpage() {
     <>
       <Header>
         {" "}
-        <h1>Mundus</h1>
+        <h1>Travel Journal</h1>
       </Header>
 
       <Form onSubmit={handleSubmit}>
