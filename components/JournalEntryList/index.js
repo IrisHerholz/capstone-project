@@ -7,17 +7,19 @@ export default function JournalEntryList() {
       <header>
         <H1>Your Entries</H1>
       </header>
-      <Ul>
-        {titles.map((title) => (
-          <Li key={title.date}>
-            Date: {title.date}
-            <br />
-            Title: {title.entrytitle}
-            <br />
-            Name: {title.name}
-          </Li>
-        ))}
-      </Ul>
+      <main>
+        <Ul>
+          {titles.map((title) => (
+            <Li key={title.date}>
+              Date: {title.date}
+              <br />
+              Title: {title.entrytitle}
+              <br />
+              Name: {title.name}
+            </Li>
+          ))}
+        </Ul>
+      </main>
     </>
   );
 }

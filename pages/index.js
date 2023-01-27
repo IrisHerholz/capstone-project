@@ -13,7 +13,6 @@ export default function Landingpage() {
       <container>
         <Title>Your Travel Journal</Title>
         <fieldset>
-          {" "}
           <Form onSubmit={handleSubmit}>
             <legend>Where is your journey going?</legend>
             <Label htmlFor="text">City or Country?</Label>
