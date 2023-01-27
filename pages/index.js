@@ -1,28 +1,31 @@
 import styled from "styled-components";
 import { useState } from "react";
-import { useRouter } from "next/router";
 import Link from "next/link";
 
-const Title = styled.h1`
-  font-size: 1.5em;
+const Header = styled.header`
+  font-family: monda;
+  font-size: 2em;
+  color: #e7e4d8;
+  font-weight: bold;
   text-align: center;
+  background-color: #78c9cc;
 `;
 
 const Form = styled.form`
+  background-color: #78c9cc;
   display: grid;
   width: 70%;
   margin: 5px auto;
   padding: 10px;
-  border: 1px solid rgb(37, 38, 41);
+background-image: linear-gradient(to top, white 0%, #D6546D 50%)
   border-radius: 5px;
   text-align: center;
 `;
 
 const Label = styled.label`
   display: center;
-  padding: 10px;
-  border-radius: 4px;
-  font-size: 1em;
+  padding: 20px;
+  font-size: 16pt;
   text-align: center;
 `;
 
@@ -34,15 +37,32 @@ const Button = styled.button`
   text-align: center;
 `;
 
-const StyledLink = styled.p`
+const Fieldset = styled.fieldset`
+  font-weight: Light;
   display: center;
   text-align: center;
-  font-size: 2em;
-  color: blue;
+  color: #e7e4d8;
+  font-family: monda;
+  padding: 20%;
+`;
+const Legend = styled.legend`
+  font-weight: Light;
+  display: center;
+  text-align: center;
+  color: #e7e4d8;
+  font-family: monda;
+  font-size: 18pt;
+  padding: 10%;
+`;
+const Input = styled.input`
+  font-weight: Light;
+  display: center;
+  text-align: center;
+  color: #e7e4d8;
+  font-family: monda;
 `;
 
 export default function Landingpage() {
-  const router = useRouter();
   const [output, setOutput] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -51,12 +71,16 @@ export default function Landingpage() {
   };
   return (
     <>
-      <Title>Your Travel Journal</Title>
+      <Header>
+        {" "}
+        <h1>Mundus</h1>
+      </Header>
+
       <Form onSubmit={handleSubmit}>
-        <fieldset>
-          <legend>Where is your journey going?</legend>
+        <Fieldset>
+          <Legend>Where is your journey going?</Legend>
           <Label htmlFor="text">City or Country?</Label>
-          <input
+          <Input
             type="text"
             required
             id="text"
@@ -65,10 +89,10 @@ export default function Landingpage() {
           />
           <Button type="submit">Submit</Button>
           <p>{output}</p>
-        </fieldset>
+        </Fieldset>
       </Form>
       <Link href="/EntryListPage">
-        <StyledLink>Your Entries</StyledLink>
+        <p>Your Entries</p>
       </Link>
     </>
   );

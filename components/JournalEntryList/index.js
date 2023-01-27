@@ -1,6 +1,5 @@
 import { titles } from "/lib/data.js";
 import styled from "styled-components";
-import { v4 as uuidv4 } from "uuid";
 
 export default function JournalEntryList() {
   return (
@@ -11,7 +10,7 @@ export default function JournalEntryList() {
       <main>
         <EntryList>
           {titles.map((title) => (
-            <ListItem key={uuidv4()}>
+            <ListItem key={title.id}>
               Date: {title.date}
               <br />
               Entrytitle: {title.entryTitle}
@@ -38,7 +37,7 @@ const ListItem = styled.li`
   text-align: center;
   list-style-position: inside;
   background: lightgray;
-  margin: 2px;
+  margin: 4px;
 `;
 const EntryList = styled.ul`
   position: relative;
