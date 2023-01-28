@@ -1,59 +1,23 @@
 import styled from "styled-components";
 import { useState } from "react";
-import link from "next/link";
-
-const StyledNextLink = styled(link)`
-  text-align: center;
-  font-size: 1em;
-  color: blue;
-`;
-
-const Form = styled.form`
-  color: black;
-  display: grid;
-  width: 100%;
-  margin: 5px auto;
-  padding: 10px;
-  border-radius: 5px;
-  text-align: center;
-`;
-
-const Label = styled.label`
-  display: center;
-  padding: 20px;
-  font-size: 10pt;
-  text-align: center;
-`;
-
-const Button = styled.button`
-  border-radius: 5px;
-  width: 100px;
-  margin: 20px;
-  padding: 0.5px;
-  display: center;
-  text-align: center;
-`;
 
 const Fieldset = styled.fieldset`
-  display: center;
-  text-align: center;
-  color: #black;
-  font-family: monda;
-  padding: 10%;
+  height: 70px;
+  margin: 30px;
+  padding: 60px;
+`;
+const Label = styled.label`
+  font-size: 10pt;
+`;
+const Button = styled.button`
+  width: 100px;
+  margin: 50px;
+  padding: 10px;
+  height: 30px;
 `;
 const Legend = styled.legend`
-  font-weight: Light;
-  display: center;
-  text-align: center;
-  color: black;
-  font-family: monda;
   font-size: 12pt;
-  padding: 30px;
-`;
-const Input = styled.input`
-  font-weight: Light;
-  color: black;
-  font-family: monda;
+  padding: 20px;
 `;
 
 export default function Landingpage() {
@@ -66,22 +30,24 @@ export default function Landingpage() {
   return (
     <>
       <main>
-        <Form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <Fieldset>
             <Legend>Where is your journey going?</Legend>
             <Label htmlFor="text">City or Country</Label>
-            <Input
+            <input
               type="text"
               required
               id="text"
               name="text"
+              min="1"
+              max="20"
               placeholder="enter your destination..."
+              pattern="[a-zA-Z]+"
             />
             <Button type="submit">Submit</Button>
             <p>{output}</p>
           </Fieldset>
-        </Form>
-        <StyledNextLink href="/EntryListPage">Your Entries</StyledNextLink>
+        </form>
       </main>
     </>
   );

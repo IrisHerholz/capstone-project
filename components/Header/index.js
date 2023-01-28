@@ -11,19 +11,15 @@ export default function Header() {
 }
 
 export const StyledHeader = styled.header`
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 368px;
-  top: 30px;
-  margin: 0px;
-  padding: 0.5em;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+  position: relativ;
   text-align: center;
-  border-radius: 1px;
-  font-family: monda;
-  font-size: 12pt;
-  color: #e7e4d8;
-  font-weight: light;
-  text-align: center;
-  background-color: #78c9cc;
+  color: black;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
 `;
