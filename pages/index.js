@@ -1,6 +1,65 @@
 import styled from "styled-components";
-import React from "react";
 import { useState } from "react";
+import Link from "next/link";
+
+const Header = styled.header`
+  font-family: monda;
+  font-size: 2em;
+  color: #e7e4d8;
+  font-weight: bold;
+  text-align: center;
+  background-color: #78c9cc;
+`;
+
+const Form = styled.form`
+  color: black;
+  display: grid;
+  width: 70%;
+  margin: 5px auto;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+`;
+
+const Label = styled.label`
+  display: center;
+  padding: 20px;
+  font-size: 16pt;
+  text-align: center;
+`;
+
+const Button = styled.button`
+  border-radius: 3px;
+  margin: 2px;
+  padding: 0.5px;
+  display: center;
+  text-align: center;
+`;
+
+const Fieldset = styled.fieldset`
+  font-weight: Light;
+  display: center;
+  text-align: center;
+  color: #e7e4d8;
+  font-family: monda;
+  padding: 20%;
+`;
+const Legend = styled.legend`
+  font-weight: Light;
+  display: center;
+  text-align: center;
+  color: #e7e4d8;
+  font-family: monda;
+  font-size: 18pt;
+  padding: 10%;
+`;
+const Input = styled.input`
+  font-weight: Light;
+  display: center;
+  text-align: center;
+  color: #e7e4d8;
+  font-family: monda;
+`;
 
 export default function Landingpage() {
   const [output, setOutput] = useState("");
@@ -11,14 +70,14 @@ export default function Landingpage() {
   };
   return (
     <>
-      <container>
-        <Title>Your Travel Journal</Title>
-        <Form
-          onSubmit={handleSubmit}
-          aria-labelledby="Where is your journey going?"
-        >
+      <Header>
+        <h1>Travel Journal</h1>
+      </Header>
+      <Form onSubmit={handleSubmit}>
+        <Fieldset>
+          <Legend>Where is your journey going?</Legend>
           <Label htmlFor="text">City or Country?</Label>
-          <input
+          <Input
             type="text"
             required
             id="text"
@@ -27,37 +86,9 @@ export default function Landingpage() {
           />
           <Button type="submit">Submit</Button>
           <p>{output}</p>
-        </Form>
-      </container>
+        </Fieldset>
+      </Form>
+      <Link href="/EntryListPage">Your Entries</Link>
     </>
   );
 }
-
-const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-`;
-
-const Form = styled.form`
-  display: grid;
-  width: 70%;
-  margin: 5px auto;
-  padding: 10px;
-  border: 1px solid rgb(37, 38, 41);
-  border-radius: 5px;
-  text-align: center;
-`;
-
-const Label = styled.label`
-  display: center;
-  padding: 10px;
-  border-radius: 4px;
-  font-size: 1em;
-  text-align: center;
-`;
-
-const Button = styled.button`
-  border-radius: 3px;
-  margin: 2px;
-  padding: 0.5px;
-`;
