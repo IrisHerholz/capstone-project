@@ -1,22 +1,29 @@
-import React from "react";
-import link from "next/link";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import styled from "styled-components";
 
-const NavBar = () => {
+const Navigation = () => {
+  const router = useRouter();
   return (
     <StyledFooter>
       <StyledNav>
-        <ul>
-          <StyledNextLinkHome href="/">HOME</StyledNextLinkHome>
-          <StyledNextLinkEntrylist href="/EntryListPage">
-            ENTRYLIST
-          </StyledNextLinkEntrylist>
-        </ul>
+        <StyledNextLinkHome
+          href="/"
+          className={router.pathname === "/" ? "active" : ""}
+        >
+          HOME
+        </StyledNextLinkHome>
+        <StyledNextLinkBook
+          href="/EntryListPage"
+          className={router.pathname === "/EntryListPage" ? "active" : ""}
+        >
+          ENTRYLIST
+        </StyledNextLinkBook>
       </StyledNav>
     </StyledFooter>
   );
 };
-export default NavBar;
+export default Navigation;
 
 const StyledFooter = styled.footer`
   font-size: 10pt;
@@ -32,21 +39,24 @@ const StyledNav = styled.nav`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  color: black;
-padding: 2px;
-  magin 2px;
-  border: 2px solid black;
+  padding: 2px;
+  margin: 2px;
+  border: 1px solid black;
   color: black;
 `;
-
-const StyledNextLinkHome = styled(link)`
-padding: 10px;
-  magin 2px;
+const StyledNextLinkHome = styled(Link)`
+  padding: 10px;
+  margin: 20px;
   border: 2px solid black;
-text-decoration: none;`;
-
-const StyledNextLinkEntrylist = styled(link)`
-padding: 10px;
-  magin 2px;
+  &.active {
+    background-color: lightgrey;
+  }
+`;
+const StyledNextLinkBook = styled(Link)`
+  padding: 10px;
+  margin: 20px;
   border: 2px solid black;
-text-decoration: none;`;
+  &.active {
+    background-color: lightgrey;
+  }
+`;

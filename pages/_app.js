@@ -1,7 +1,7 @@
 import GlobalStyle from "@/styles";
 import Head from "next/head";
 import Header from "../components/Header";
-import Navbar from "../components/Navigation/nav.index";
+import Navigation from "../components/Navigation/nav.index";
 
 export default function App({ Component, pageProps }) {
   return (
@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }) {
       </Head>
       <Header />
       <Component {...pageProps} />
-      <Navbar />
+      <Navigation />
     </>
   );
 }

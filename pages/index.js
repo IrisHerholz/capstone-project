@@ -39,10 +39,9 @@ export default function Landingpage() {
               required
               id="text"
               name="text"
-              min="1"
-              max="20"
+              pattern="^[^\sa0-9].*$"
+              maxLength="15"
               placeholder="enter your destination..."
-              pattern="[a-zA-Z]+"
             />
             <Button type="submit">Submit</Button>
             <p>{output}</p>
