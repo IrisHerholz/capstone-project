@@ -2,14 +2,12 @@ import React from "react";
 import link from "next/link";
 import styled from "styled-components";
 
-const Navbar = () => {
+const NavBar = () => {
   return (
     <StyledFooter>
       <StyledNav>
         <ul>
           <StyledNextLinkHome href="/">HOME</StyledNextLinkHome>
-        </ul>
-        <ul>
           <StyledNextLinkEntrylist href="/EntryListPage">
             ENTRYLIST
           </StyledNextLinkEntrylist>
@@ -18,7 +16,7 @@ const Navbar = () => {
     </StyledFooter>
   );
 };
-export default Navbar;
+export default NavBar;
 
 const StyledFooter = styled.footer`
   font-size: 10pt;
@@ -35,7 +33,7 @@ const StyledNav = styled.nav`
   flex-direction: row;
   justify-content: center;
   color: black;
-    padding: 2px;
+padding: 2px;
   magin 2px;
   border: 2px solid black;
   color: black;
