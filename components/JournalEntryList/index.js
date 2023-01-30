@@ -21,7 +21,7 @@ export default function JournalEntryList() {
 }
 
 const Heading = styled.h1`
-  position: relativ;
+  position: relative;
   text-align: center;
   font-size: 20pt;
 `;

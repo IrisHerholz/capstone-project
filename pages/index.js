@@ -1,22 +1,22 @@
 import styled from "styled-components";
 import { useState } from "react";
 
-const Fieldset = styled.fieldset`
+const StyledFieldset = styled.fieldset`
   height: 70px;
   margin: 30px;
   padding: 60px;
 `;
-const Label = styled.label`
-  font-size: 10pt;
+const StyledLabel = styled.label`
+  font-size: 1em;
 `;
-const Button = styled.button`
+const StyledButton = styled.button`
   width: 100px;
   margin: 50px;
   padding: 10px;
   height: 30px;
 `;
-const Legend = styled.legend`
-  font-size: 12pt;
+const StyledLegend = styled.legend`
+  font-size: 1em;
   padding: 20px;
 `;
 
@@ -31,9 +31,9 @@ export default function Landingpage() {
     <>
       <main>
         <form onSubmit={handleSubmit}>
-          <Fieldset>
-            <Legend>Where is your journey going?</Legend>
-            <Label htmlFor="text">City or Country</Label>
+          <StyledFieldset>
+            <StyledLegend>Where is your journey going?</StyledLegend>
+            <StyledLabel htmlFor="text">City or Country</StyledLabel>
             <input
               type="text"
               required
@@ -43,9 +43,9 @@ export default function Landingpage() {
               maxLength="15"
               placeholder="enter your destination..."
             />
-            <Button type="submit">Submit</Button>
+            <StyledButton type="submit">Submit</StyledButton>
             <p>{output}</p>
-          </Fieldset>
+          </StyledFieldset>
         </form>
       </main>
     </>

@@ -14,7 +14,7 @@ export const StyledHeader = styled.header`
   padding: 12px;
   overflow: hidden;
   background-color: #f1f1f1;
-  position: relativ;
+  position: relative;
   text-align: center;
   color: black;
   text-decoration: none;
