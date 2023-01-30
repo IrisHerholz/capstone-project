@@ -2,13 +2,14 @@ import styled from "styled-components";
 import { useState } from "react";
 
 const StyledFieldset = styled.fieldset`
-  height: 70px;
   margin: 30px;
   padding: 60px;
+  height: 70px;
 `;
 const StyledLabel = styled.label`
   font-size: 1em;
 `;
+
 const StyledButton = styled.button`
   width: 100px;
   margin: 50px;
@@ -39,8 +40,9 @@ export default function Landingpage() {
               required
               id="text"
               name="text"
-              pattern="^[^\sa0-9].*$"
-              maxLength="15"
+              pattern="[a-zA-Z][a-zA-Z\s,.-]*"
+              min="1"
+              max="15"
               placeholder="enter your destination..."
             />
             <StyledButton type="submit">Submit</StyledButton>

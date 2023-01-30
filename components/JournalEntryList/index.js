@@ -10,7 +10,7 @@ export default function JournalEntryList() {
           <ListItem key={title.id}>
             <p>Date: {title.date}</p>
             <p>Entrytitle: {title.entryTitle} </p>
-            <p>Journalentry: {title.name}</p>
+            <p>Journalentry: {title.entry}</p>
           </ListItem>
         ))}
       </EntryList>
@@ -31,8 +31,8 @@ const ListItem = styled.li`
   background: lightgray;
   border: 1px solid black;
   border-radius: 10px;
-  margin: 1em;
-  padding: 0, 5em;
+  margin: 5px;
+  padding: 3px;
 `;
 const EntryList = styled.ul`
   max-width: 368px;
