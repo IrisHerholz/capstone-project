@@ -7,18 +7,18 @@ const Navigation = () => {
   return (
     <StyledFooter>
       <StyledNav>
-        <StyledNextLinkHome
+        <StyledNextLink
           href="/"
           className={router.pathname === "/" ? "active" : ""}
         >
           HOME
-        </StyledNextLinkHome>
-        <StyledNextLinkBook
+        </StyledNextLink>
+        <StyledNextLink
           href="/EntryListPage"
           className={router.pathname === "/EntryListPage" ? "active" : ""}
         >
           ENTRYLIST
-        </StyledNextLinkBook>
+        </StyledNextLink>
       </StyledNav>
     </StyledFooter>
   );
@@ -26,12 +26,12 @@ const Navigation = () => {
 export default Navigation;
 
 const StyledFooter = styled.footer`
-  font-size: 0.8em;
+  font-size: 0, 5em;
   position: fixed;
   bottom: 0;
   color: black;
   width: 100%;
-  height: 75px;
+  height: 70px;
   border: 1px solid black;
 `;
 
@@ -39,20 +39,12 @@ const StyledNav = styled.nav`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 2px;
-  margin: 2px;
+  padding: 1px;
+  margin: 0px;
   border: 1px solid black;
   color: black;
 `;
-const StyledNextLinkHome = styled(Link)`
-  padding: 10px;
-  margin: 20px;
-  border: 2px solid black;
-  &.active {
-    background-color: lightgrey;
-  }
-`;
-const StyledNextLinkBook = styled(Link)`
+const StyledNextLink = styled(Link)`
   padding: 10px;
   margin: 20px;
   border: 2px solid black;
