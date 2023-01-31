@@ -14,8 +14,14 @@ const Navigation = () => {
           HOME
         </StyledNextLink>
         <StyledNextLink
-          href="/EntryListPage"
-          className={router.pathname === "/EntryListPage" ? "active" : ""}
+          href="entryform"
+          className={router.pathname === "entryform" ? "active" : ""}
+        >
+          NEW ENTRY
+        </StyledNextLink>
+        <StyledNextLink
+          href="/entrylist"
+          className={router.pathname === "/entrylist" ? "active" : ""}
         >
           ENTRYLIST
         </StyledNextLink>
