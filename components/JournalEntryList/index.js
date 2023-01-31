@@ -4,44 +4,41 @@ import styled from "styled-components";
 export default function JournalEntryList() {
   return (
     <>
-      <header>
-        <Heading>Your Entries</Heading>
-      </header>
-      <main>
-        <EntryList>
-          {titles.map((title) => (
-            <ListItem key={title.id}>
-              Date: {title.date}
-              <br />
-              Entrytitle: {title.entryTitle}
-              <br />
-              Journalentry: {title.name}
-            </ListItem>
-          ))}
-        </EntryList>
-      </main>
+      <Heading>Your Entries</Heading>
+      <EntryList>
+        {titles.map((title) => (
+          <ListItem key={title.id}>
+            <p>Date: {title.date}</p>
+            <p>Entrytitle: {title.entryTitle} </p>
+            <p>Journalentry: {title.entry}</p>
+          </ListItem>
+        ))}
+      </EntryList>
     </>
   );
 }
 
-const Heading = styled.h1`
+//styled-components
+
+const Heading = styled.h2`
   position: relative;
-  top: 20px;
-  font-size: 2em;
   text-align: center;
+  font-size: 1, 2em;
 `;
 const ListItem = styled.li`
-  display: grid;
   position: relative;
   font-size: 1em;
   text-align: center;
   list-style-position: inside;
   background: lightgray;
-  margin: 4px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 3px;
 `;
 const EntryList = styled.ul`
-  position: relative;
-  font-size: 1em;
-  text-align: center;
-  list-style-type: circle;
+  max-width: 368px;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0 0 3rem 0;
 `;

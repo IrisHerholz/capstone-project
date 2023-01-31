@@ -1,10 +1,9 @@
 import JournalEntryList from "@/components/JournalEntryList";
-import Link from "next/link";
+import Header from "next/head";
 
 export default function EntryListPage() {
   return (
     <>
-      <Link href="/">Back</Link>
       <JournalEntryList />
     </>
   );

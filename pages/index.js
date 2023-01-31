@@ -1,65 +1,5 @@
 import styled from "styled-components";
 import { useState } from "react";
-import Link from "next/link";
-
-const Header = styled.header`
-  font-family: monda;
-  font-size: 2em;
-  color: #e7e4d8;
-  font-weight: bold;
-  text-align: center;
-  background-color: #78c9cc;
-`;
-
-const Form = styled.form`
-  color: black;
-  display: grid;
-  width: 70%;
-  margin: 5px auto;
-  padding: 10px;
-  border-radius: 5px;
-  text-align: center;
-`;
-
-const Label = styled.label`
-  display: center;
-  padding: 20px;
-  font-size: 16pt;
-  text-align: center;
-`;
-
-const Button = styled.button`
-  border-radius: 3px;
-  margin: 2px;
-  padding: 0.5px;
-  display: center;
-  text-align: center;
-`;
-
-const Fieldset = styled.fieldset`
-  font-weight: Light;
-  display: center;
-  text-align: center;
-  color: #e7e4d8;
-  font-family: monda;
-  padding: 20%;
-`;
-const Legend = styled.legend`
-  font-weight: Light;
-  display: center;
-  text-align: center;
-  color: #e7e4d8;
-  font-family: monda;
-  font-size: 18pt;
-  padding: 10%;
-`;
-const Input = styled.input`
-  font-weight: Light;
-  display: center;
-  text-align: center;
-  color: #e7e4d8;
-  font-family: monda;
-`;
 
 export default function Landingpage() {
   const [output, setOutput] = useState("");
@@ -70,25 +10,45 @@ export default function Landingpage() {
   };
   return (
     <>
-      <Header>
-        <h1>Travel Journal</h1>
-      </Header>
-      <Form onSubmit={handleSubmit}>
-        <Fieldset>
-          <Legend>Where is your journey going?</Legend>
-          <Label htmlFor="text">City or Country?</Label>
-          <Input
-            type="text"
-            required
-            id="text"
-            name="text"
-            placeholder="enter your destination..."
-          />
-          <Button type="submit">Submit</Button>
-          <p>{output}</p>
-        </Fieldset>
-      </Form>
-      <Link href="/EntryListPage">Your Entries</Link>
+      <main>
+        <form onSubmit={handleSubmit}>
+          <StyledFieldset>
+            <StyledLegend>Where is your journey going?</StyledLegend>
+            <StyledLabel htmlFor="text">City or Country</StyledLabel>
+            <input
+              type="text"
+              required
+              id="text"
+              name="text"
+              pattern="^[^\sa0-9].*$"
+              maxLength="20"
+              placeholder="enter your destination..."
+            />
+            <StyledButton type="submit">Submit</StyledButton>
+            <p>{output}</p>
+          </StyledFieldset>
+        </form>
+      </main>
     </>
   );
 }
+
+//styled-components
+
+const StyledFieldset = styled.fieldset`
+  margin: px;
+  width: 50%;
+  height: 100%;
+`;
+const StyledLegend = styled.legend`
+  font-size: 0, 5em;
+`;
+const StyledLabel = styled.label`
+  font-size: 1em;
+`;
+const StyledButton = styled.button`
+  margin: 0px;
+  padding: 0px;
+  height: 30px;
+  width: 100px;
+`;

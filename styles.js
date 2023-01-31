@@ -5,12 +5,11 @@ export default createGlobalStyle`
   *::before,
   *::after {
     box-sizing: border-box;
+  font-family: monda;
   }
   body {
     margin: 0;
-    font-family: monda;
   }
-
   main {
     position: relative;
     top: 5rem;
