@@ -20,7 +20,7 @@ export default function JournalEntryList() {
 
 //styled-components
 
-const Heading = styled.h1`
+const Heading = styled.h2`
   position: relative;
   text-align: center;
   font-size: 1, 2em;
