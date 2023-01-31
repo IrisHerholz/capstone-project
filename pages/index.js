@@ -1,26 +1,6 @@
 import styled from "styled-components";
 import { useState } from "react";
 
-const StyledFieldset = styled.fieldset`
-  margin: 30px;
-  padding: 60px;
-  height: 70px;
-`;
-const StyledLabel = styled.label`
-  font-size: 1em;
-`;
-
-const StyledButton = styled.button`
-  width: 100px;
-  margin: 50px;
-  padding: 10px;
-  height: 30px;
-`;
-const StyledLegend = styled.legend`
-  font-size: 1em;
-  padding: 20px;
-`;
-
 export default function Landingpage() {
   const [output, setOutput] = useState("");
   const handleSubmit = (event) => {
@@ -40,9 +20,8 @@ export default function Landingpage() {
               required
               id="text"
               name="text"
-              pattern="[a-zA-Z][a-zA-Z\s,.-]*"
-              min="1"
-              max="15"
+              pattern="^[^\sa0-9].*$"
+              maxLength="20"
               placeholder="enter your destination..."
             />
             <StyledButton type="submit">Submit</StyledButton>
@@ -53,3 +32,23 @@ export default function Landingpage() {
     </>
   );
 }
+
+//styled-components
+
+const StyledFieldset = styled.fieldset`
+  margin: px;
+  width: 50%;
+  height: 100%;
+`;
+const StyledLegend = styled.legend`
+  font-size: 0, 5em;
+`;
+const StyledLabel = styled.label`
+  font-size: 1em;
+`;
+const StyledButton = styled.button`
+  margin: 0px;
+  padding: 0px;
+  height: 30px;
+  width: 100px;
+`;

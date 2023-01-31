@@ -25,6 +25,8 @@ const Navigation = () => {
 };
 export default Navigation;
 
+//styled-components
+
 const StyledFooter = styled.footer`
   font-size: 0, 5em;
   position: fixed;

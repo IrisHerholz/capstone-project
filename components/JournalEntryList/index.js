@@ -18,10 +18,12 @@ export default function JournalEntryList() {
   );
 }
 
+//styled-components
+
 const Heading = styled.h1`
   position: relative;
   text-align: center;
-  font-size: 1, 6em;
+  font-size: 1, 2em;
 `;
 const ListItem = styled.li`
   position: relative;
