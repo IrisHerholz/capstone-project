@@ -1,31 +1,28 @@
-import { titles } from "/lib/data.js";
 import styled from "styled-components";
+import { entries } from "@/pages/_app";
+import { useAtom } from "jotai";
 
-export default function JournalEntryList() {
+export default function MyListComponent() {
+  const [journalEntries, setJournalEntries] = useAtom(entries);
+
   return (
     <>
       <Heading>Your Entries</Heading>
       <EntryList>
-        {titles.map((title) => (
-          <ListItem key={title.id}>
-            <p>Date: {title.date}</p>
-            <p>Entrytitle: {title.entryTitle} </p>
-            <p>Journalentry: {title.entry}</p>
-          </ListItem>
+        {journalEntries.map((entry) => (
+          <Listentry key={entry.id}></Listentry>
         ))}
       </EntryList>
     </>
   );
 }
 
-//styled-components
-
 const Heading = styled.h2`
   position: relative;
   text-align: center;
   font-size: 1, 2em;
 `;
-const ListItem = styled.li`
+const Listentry = styled.li`
   position: relative;
   font-size: 1em;
   text-align: center;

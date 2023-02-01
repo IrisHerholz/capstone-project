@@ -1,23 +1,17 @@
-//import entries from "@/atoms/entries";
-//import { useAtom } from "jotai";
-//const [journalEntries, setJournalEntries] = useAtom(entries);
-//function handleAddEntry(newEntry) {
-//setJournalEntries((prevEntries) => [...prevEntries, newEntry]);
-// import JournalEntryList from "@/components/JournalEntryList";
+import entries from "/pages/_app.js";
+import { useAtom } from "jotai";
 import Form from "@/components/Form";
-import { useState } from "react";
+import MyListComponent from "@/components/JournalEntryList";
 
-//const [journalEntries, setJournalEntries] = useAtom();
-
-export default function AddNewEntry({ handleSubmit }) {
-  const [journalEntries, setJournalEntries] = useState();
-
-  function handleSubmit(event) {
-    setJournalEntries(event.target.value);
+export default function FomEntry({}) {
+  const [journalEntries, setJournalEntries] = useAtom(entries);
+  function addEntry(newEntry) {
+    setJournalEntries((previousEntries) => [...previousEntries, newEntry]);
   }
   return (
-    <>
-      <Form journalEntries={journalEntries} onSubmit={handleSubmit} />
-    </>
+    <main>
+      <Form onSubmitEvent={addEntry} />
+      <MyListComponent journalEntries={journalEntries} />
+    </main>
   );
 }

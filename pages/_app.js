@@ -2,11 +2,10 @@ import GlobalStyle from "@/styles";
 import Head from "next/head";
 import Header from "../components/Header";
 import Navigation from "../components/Navigation/index";
+import { atom } from "jotai";
+import Form from "@/components/Form";
 
-//global state
-//import { atom } from "jotai";
-//export const entries = atom([]);
-
+export const entries = atom([]);
 export default function App({ Component, pageProps }) {
   return (
     <>
@@ -16,6 +15,7 @@ export default function App({ Component, pageProps }) {
       </Head>
       <Header />
       <Component {...pageProps} />
+      <Form />
       <Navigation />
     </>
   );

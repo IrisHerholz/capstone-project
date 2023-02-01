@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { useAtom } from "react";
+import { entries } from "/pages/_app.js";
 
 export default function Form() {
-  const [journalEntries, setJournalEntries] = useState(0);
+  const [journalEntries, setJournalEntries] = useAtom(entries);
   function handleSubmit(event) {
     event.preventDefault();
-
     event.target.reset();
   }
   return (
@@ -51,11 +51,11 @@ export default function Form() {
           required
           onChange={(event) => setJournalEntries(event.target.value)}
         />
-        <label htmlFor="journalEntry">Journal Entry:</label>
+        <label htmlFor="journal">Journal Entry:</label>
         <input
           type="text"
-          id="journalEntry"
-          name="journalEntry"
+          id="journal"
+          name="journal"
           placeholder="You have 200 words for your entry"
           maxLength="200"
           required
@@ -72,7 +72,6 @@ const StyledDate = styled.section`
   display: flex;
   flex-direction: row;
 `;
-
 const StyledSection = styled.section`
   position: center;
   padding: 30px;
