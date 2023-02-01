@@ -3,14 +3,14 @@ import { useState } from "react";
 
 export default function Form() {
   const [journalEntries, setJournalEntries] = useState(0);
-
   function handleSubmit(event) {
     event.preventDefault();
+
     event.target.reset();
   }
   return (
     <StyledSection>
-      <StyledForm onSubmit={handleSubmit}>
+      <StyledForm onSubmit={handleSubmit} value={journalEntries}>
         <label htmlFor="destination">Your Destination:</label>
         <input
           type="text"
@@ -18,7 +18,7 @@ export default function Form() {
           name="destination"
           placeholder="Enter your destination"
           maxLength="20"
-          onChange={(event) => setJournalEntries(event.target.value.length)}
+          onChange={(event) => setJournalEntries(event.target.value)}
           required
         />
 
@@ -29,7 +29,7 @@ export default function Form() {
             name="dateStart"
             type="date"
             required
-            onChange={(event) => setJournalEntries(event.target.value.length)}
+            onChange={(event) => setJournalEntries(event.target.value)}
           />
           <label htmlFor="dateEnd">End Date:</label>
           <input
@@ -37,7 +37,7 @@ export default function Form() {
             name="dateEnd"
             type="date"
             required
-            onChange={(event) => setJournalEntries(event.target.value.length)}
+            onChange={(event) => setJournalEntries(event.target.value)}
           />
         </StyledDate>
 
@@ -49,7 +49,7 @@ export default function Form() {
           placeholder="Give your entry a title"
           maxLength="20"
           required
-          onChange={(event) => setJournalEntries(event.target.value.length)}
+          onChange={(event) => setJournalEntries(event.target.value)}
         />
         <label htmlFor="journalEntry">Journal Entry:</label>
         <input
@@ -59,7 +59,7 @@ export default function Form() {
           placeholder="You have 200 words for your entry"
           maxLength="200"
           required
-          onChange={(event) => setJournalEntries(event.target.value.length)}
+          onChange={(event) => setJournalEntries(event.target.value)}
         />
         <button type="submit">Save It</button>
       </StyledForm>
