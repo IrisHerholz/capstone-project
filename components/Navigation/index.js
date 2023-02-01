@@ -36,27 +36,30 @@ export default Navigation;
 const StyledFooter = styled.footer`
   font-size: 0, 5em;
   position: fixed;
-  bottom: 0;
+  bottom: 20px;
   color: black;
   width: 100%;
   height: 70px;
-  border: 1px solid black;
+  border: 1px solid lightgrey;
 `;
 
 const StyledNav = styled.nav`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
   padding: 1px;
   margin: 0px;
-  border: 1px solid black;
-  color: black;
+  height: 100%;
+  background-color: #f1f1f1;
 `;
 const StyledNextLink = styled(Link)`
+  text-decoration: none;
+  color: black;
   padding: 10px;
-  margin: 20px;
-  border: 2px solid black;
+  margin: 10px;
+  border-radius: 1rem;
   &.active {
-    background-color: lightgrey;
+    background-color: lightblue;
   }
 `;

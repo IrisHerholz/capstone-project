@@ -1,51 +1,87 @@
-import { useState } from "react";
+import styled from "styled-components";
+//import { useState } from "react";
 
-const Form = () => {
-  const [input1, setInput1] = useState("");
-  const [input2, setInput2] = useState("");
-  const [input3, setInput3] = useState("");
-  const [input4, setInput4] = useState("");
-
-  const handleSubmit = (event) => {
+export default function Form({ onSubmitEvent }) {
+  //const [journalEntries, setJournalEntries] = useAtom(entries);
+  function handleSubmit(event) {
     event.preventDefault();
-  };
+
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+    setJournalEntries(data);
+    onSubmitEvent({
+      destination: data.destination,
+      dateStart: data.dateStart,
+      dateEnd: data.dateEnd,
+      entryTitle: data.entryTitle,
+      fyd,
+    });
+    event.target.reset();
+  }
   return (
-    <main>
-      <form onSubmit={handleSubmit}>
-        <fieldset>
-          <input
-            type="text"
-            value={input1}
-            onChange={(event) => setInput1(event.target.value)}
-            placeholder="enter your traveldestination"
-            min="1"
-            max="20"
-          />
-          <input
-            type="date"
-            value={input2}
-            onChange={(event) => setInput2(event.target.value)}
-          />
-          <input
-            type="text"
-            value={input3}
-            onChange={(event) => setInput3(event.target.value)}
-            placeholder="give your entry a title"
-            min="1"
-            max="30"
-          />
-          <input
-            type="text"
-            value={input4}
-            onChange={(event) => setInput4(event.target.value)}
-            placeholder="you have 200 words for your entry"
-            min="1"
-            max="200"
-          />
-        </fieldset>
-        <button type="submit">save</button>
-      </form>
-    </main>
+    <StyledSection>
+      <StyledForm onSubmit={handleSubmit}>
+        <label htmlFor="destination">Your Destination:</label>
+        <input
+          type="text"
+          id="destination"
+          name="destination"
+          placeholder="Enter your destination"
+          maxLength="20"
+          required
+        />
+        <StyledDate>
+          <label htmlFor="dateStart">Start Date:</label>
+          <input id="dateStart" name="dateStart" type="date" required />
+
+          <label htmlFor="dateEnd">End Date:</label>
+          <input id="dateEnd" name="dateEnd" type="date" required />
+        </StyledDate>
+
+        <label htmlFor="entryTitle">Entry Title:</label>
+        <input
+          id="entryTitle"
+          name="entryTitle"
+          type="text"
+          placeholder="Give your entry a title"
+          maxLength="20"
+          required
+        />
+        <label htmlFor="journalEntry">Journal Entry:</label>
+        <input
+          type="text"
+          id="journalEntry"
+          name="journalEntry"
+          placeholder="You have 200 words for your entry"
+          maxLength="200"
+          required
+        />
+        <button type="submit">Save It</button>
+      </StyledForm>
+    </StyledSection>
   );
-};
-export default Form;
+}
+
+//styled-component
+const StyledDate = styled.section`
+  display: flex;
+  flex-direction: row;
+`;
+
+const StyledSection = styled.section`
+  position: center;
+  padding: 30px;
+  margin: 5px;
+  bottom: 30px;
+`;
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  top: 150px;
+  border: 1px solid black;
+  border-radius: 1rem;
+  color: black;
+  gap: 1rem;
+  padding: 5%;
+`;
