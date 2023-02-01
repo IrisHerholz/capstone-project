@@ -1,14 +1,16 @@
-import Form from "@/components/Form";
-//import JournalEntryList from "@/components/JournalEntryList";
 //import entries from "@/atoms/entries";
 //import { useAtom } from "jotai";
-export default function EntryListPage() {
-  //const [journalEntries, setJournalEntries] = useAtom(entries);
+//const [journalEntries, setJournalEntries] = useAtom(entries);
+//function handleAddEntry(newEntry) {
+//setJournalEntries((prevEntries) => [...prevEntries, newEntry]);
+
+import Form from "@/components/Form";
+import JournalEntryList from "@/components/JournalEntryList";
+
+export default function AddNewEntry({ handleSubmit }) {
   return (
-    //function handleAddEntry(newEntry) {
-    //setJournalEntries((prevEntries) => [...prevEntries, newEntry]);
     <>
-      <Form />
+      <Form handleSubmit={handleSubmit} />
     </>
   );
 }

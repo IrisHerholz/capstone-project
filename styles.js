@@ -5,7 +5,7 @@ export default createGlobalStyle`
   *::before,
   *::after {
     box-sizing: border-box;
-  font-family: Arima Madurai;
+    font-family: arial;
   }
   body {
     margin: 0;

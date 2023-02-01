@@ -1,21 +1,11 @@
 import styled from "styled-components";
-//import { useState } from "react";
+import { useState } from "react";
 
-export default function Form({ onSubmitEvent }) {
-  //const [journalEntries, setJournalEntries] = useAtom(entries);
+export default function Form() {
+  const [journalEntries, setJournalEntries] = useState(0);
+
   function handleSubmit(event) {
     event.preventDefault();
-
-    const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData);
-    setJournalEntries(data);
-    onSubmitEvent({
-      destination: data.destination,
-      dateStart: data.dateStart,
-      dateEnd: data.dateEnd,
-      entryTitle: data.entryTitle,
-      fyd,
-    });
     event.target.reset();
   }
   return (
@@ -28,14 +18,27 @@ export default function Form({ onSubmitEvent }) {
           name="destination"
           placeholder="Enter your destination"
           maxLength="20"
+          onChange={(event) => setJournalEntries(event.target.value.length)}
           required
         />
+
         <StyledDate>
           <label htmlFor="dateStart">Start Date:</label>
-          <input id="dateStart" name="dateStart" type="date" required />
-
+          <input
+            id="dateStart"
+            name="dateStart"
+            type="date"
+            required
+            onChange={(event) => setJournalEntries(event.target.value.length)}
+          />
           <label htmlFor="dateEnd">End Date:</label>
-          <input id="dateEnd" name="dateEnd" type="date" required />
+          <input
+            id="dateEnd"
+            name="dateEnd"
+            type="date"
+            required
+            onChange={(event) => setJournalEntries(event.target.value.length)}
+          />
         </StyledDate>
 
         <label htmlFor="entryTitle">Entry Title:</label>
@@ -46,6 +49,7 @@ export default function Form({ onSubmitEvent }) {
           placeholder="Give your entry a title"
           maxLength="20"
           required
+          onChange={(event) => setJournalEntries(event.target.value.length)}
         />
         <label htmlFor="journalEntry">Journal Entry:</label>
         <input
@@ -55,6 +59,7 @@ export default function Form({ onSubmitEvent }) {
           placeholder="You have 200 words for your entry"
           maxLength="200"
           required
+          onChange={(event) => setJournalEntries(event.target.value.length)}
         />
         <button type="submit">Save It</button>
       </StyledForm>
