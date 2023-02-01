@@ -12,13 +12,12 @@ import { useState } from "react";
 export default function AddNewEntry({ handleSubmit }) {
   const [journalEntries, setJournalEntries] = useState();
 
-  function handleAddEntry(event) {
+  function handleSubmit(event) {
     setJournalEntries(event.target.value);
   }
   return (
     <>
-      {" "}
-      <Form journalEntries={journalEntries} />
+      <Form journalEntries={journalEntries} onSubmit={handleSubmit} />
     </>
   );
 }
