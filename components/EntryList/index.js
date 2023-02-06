@@ -1,16 +1,19 @@
+import { titles } from "/lib/data.js";
 import styled from "styled-components";
-import { entries } from "@/pages/_app";
-import { useAtom } from "jotai";
 
-export default function MyListComponent() {
-  const [journalEntries, setJournalEntries] = useAtom(entries);
-
+export default function EntryListComponent() {
   return (
     <>
-      <Heading>Your Entries</Heading>
+      <header>
+        <Heading>Your Entries</Heading>
+      </header>
       <EntryList>
-        {journalEntries.map((entry) => (
-          <Listentry key={entry.id}></Listentry>
+        {titles.map((title) => (
+          <Listentry key={title.id}>
+            <p> Date: {title.date}</p>
+            <p>Title: {title.entryTitle}</p>
+            <p> Name: {title.entry}</p>
+          </Listentry>
         ))}
       </EntryList>
     </>

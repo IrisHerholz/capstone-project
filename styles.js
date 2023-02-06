@@ -6,6 +6,7 @@ export default createGlobalStyle`
   *::after {
     box-sizing: border-box;
     font-family: arial;
+    background-color: #whitesmoke;
   }
   body {
     margin: 0;

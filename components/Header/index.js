@@ -9,17 +9,19 @@ export default function Header() {
     </>
   );
 }
+//styled-components
 
 const StyledHeader = styled.header`
-  background-color: #f1f1f1;
-  position: relative;
+  background-color: #6495ed;
+  postion: fixed;
   text-align: center;
-  color: black;
-  font-size: 1.125em;
-  line-height: 1.6em;
-  padding: 0px;
-  margin: 0px;
-  height: 100%;
-  top: 20px;
-  border: 1px solid lightgrey;
+  color: #87cefa;
+  font-size: 2em;
+  line-height: 2em;
+  padding: 10px;
+  margin: 30px;
+  top: 10px;
+  border: 1px solid lightgray;
+  border-radius: 2em;
+  font-size: 1rem;
 `;

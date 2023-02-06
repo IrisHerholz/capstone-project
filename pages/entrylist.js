@@ -1,17 +1,20 @@
-import entries from "/pages/_app.js";
-import { useAtom } from "jotai";
+import { useState } from "react";
+import uuidv4 from "uuid/v4";
 import Form from "@/components/Form";
-import MyListComponent from "@/components/JournalEntryList";
 
-export default function FomEntry({}) {
-  const [journalEntries, setJournalEntries] = useAtom(entries);
-  function addEntry(newEntry) {
-    setJournalEntries((previousEntries) => [...previousEntries, newEntry]);
-  }
-  return (
-    <main>
-      <Form onSubmitEvent={addEntry} />
-      <MyListComponent journalEntries={journalEntries} />
-    </main>
+//export default function HomePage() {
+  //const [journalEntries, setJournalEntries] = useState([]);    {
+
+  
+ // function handleAddEntries(newEntry) {
+ //   setJournalEntries([...journalEntries, newEntry]);
+  //}
+
+  /*return (
+    <>
+      <main>
+        <Form journalEntries={entries} setJournalEntries={setEntries} />
+      </main>
+    </>
   );
 }

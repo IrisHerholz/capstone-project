@@ -34,13 +34,19 @@ export default Navigation;
 //styled-components
 
 const StyledFooter = styled.footer`
-  font-size: 0, 5em;
   position: fixed;
   bottom: 20px;
   color: black;
   width: 100%;
-  height: 70px;
-  border: 1px solid lightgrey;
+  background-color: #6495ed;
+  text-align: center;
+  color: #87cefa;
+  line-height: 1em;
+  border: 2px solid lightgray;
+  border-radius: 2em;
+  font-size: 2em;
+  padding: 10px;
+  margin: 30px;
 `;
 
 const StyledNav = styled.nav`
@@ -48,16 +54,12 @@ const StyledNav = styled.nav`
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  padding: 1px;
-  margin: 0px;
-  height: 100%;
-  background-color: #f1f1f1;
 `;
 const StyledNextLink = styled(Link)`
   text-decoration: none;
   color: black;
   padding: 10px;
-  margin: 10px;
+  margin: 30px;
   border-radius: 1rem;
   &.active {
     background-color: lightblue;
