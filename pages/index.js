@@ -1,15 +1,24 @@
 import styled from "styled-components";
 import { useState } from "react";
-import Link from "next/link";
+import EntryForm from "@/components/EntryForm";
 
 export default function Landingpage() {
   const [output, setOutput] = useState("");
+  const [isClicked, setIsClicked] = useState(false);
+
   const handleSubmit = (event) => {
     event.preventDefault();
+
     const entry = event.target.elements.text.value;
     setOutput(entry);
     event.target.reset();
   };
+
+  const onLinkClick = (event) => {
+    event.preventDefault();
+    setIsClicked(true);
+  };
+
   return (
     <>
       <main>
@@ -28,8 +37,9 @@ export default function Landingpage() {
           <StyledButton1 type="submit">Submit</StyledButton1>
           <p>{output}</p>
         </StyledForm>
-        <StyledNextLink href="entryform">start your journal</StyledNextLink>
+        <StyledA href="entryform" onClick={onLinkClick}>start your journal</StyledA>
       </main>
+     { isClicked &&  <EntryForm destValue = {output}/>}
     </>
   );
 }
@@ -60,7 +70,7 @@ const StyledButton1 = styled.button`
   height: 30px;
   width: 100px;
 `;
-const StyledNextLink = styled(Link)`
+const StyledA = styled.a`
   display: flex;
   flex-direction: column;
   align-items: center;

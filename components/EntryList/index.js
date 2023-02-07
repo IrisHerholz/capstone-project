@@ -9,11 +9,11 @@ export default function EntryListComponent() {
       </header>
       <EntryList>
         {titles.map((title) => (
-          <Listentry key={title.id}>
+          <ListEntry key={title.id}>
             <p> Date: {title.date}</p>
-            <p>Title: {title.entryTitle}</p>
+            <p> Title: {title.entryTitle}</p>
             <p> Name: {title.entry}</p>
-          </Listentry>
+          </ListEntry>
         ))}
       </EntryList>
     </>
@@ -25,7 +25,7 @@ const Heading = styled.h2`
   text-align: center;
   font-size: 1, 2em;
 `;
-const Listentry = styled.li`
+const ListEntry = styled.li`
   position: relative;
   font-size: 1em;
   text-align: center;

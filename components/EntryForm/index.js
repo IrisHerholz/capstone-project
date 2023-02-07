@@ -1,15 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 import { useState } from "react";
+import EntryListComponent from "../EntryList";
 
-export default function Form() {
+export default function EntryForm(dData) {
   const [entry, setEntry] = useState({
-    destination: "",
+    destination: dData.destValue,
     from: "",
     to: "",
-    journaltitel: "",
-    journalentry: "",
+    entryTitel: "",
+    journalEntry: "",
   });
+  const [data, setData] = useState([]);
+  const [state, setState] = useState({ data: "" })
+  const [isSubmitClicked, setIsSubmitClicked] = useState(false)
   function handleChange(event) {
     setEntry({
       ...entry,
@@ -18,20 +22,22 @@ export default function Form() {
   }
   function handleSubmit(event) {
     event.preventDefault();
+    setData(entry);
+    setIsSubmitClicked(true);
   }
-
-  return (
-    <StyledForm onSubmit={handleSubmit}>
-      <label htmlFor="destination">Your Destination:</label>
-      <textarea
-        name="destination"
-        value={entry.destination}
-        onChange={handleChange}
-        pattern="[A-Z0-9]+"
-        required
-      />
-
-      <label htmlFor="from">START</label>
+  return ( 
+<>
+  <StyledForm onSubmit={handleSubmit}>
+    <label htmlFor="destination">Your Destination:</label>
+    <textarea
+      name="destination"
+      value={dData.destValue}
+      onChange={handleChange}
+      pattern="^[^\sa0-9].*$"
+      required
+    />
+    <StyledDate> 
+    <label htmlFor="from">START</label>
       <input
         id="from"
         value={entry.from}
@@ -47,62 +53,50 @@ export default function Form() {
         type="date"
         onChange={handleChange}
       />
-
+      </StyledDate>
       <label htmlFor="entryTitle">Entry Title:</label>
       <input
-        id="journaltitel"
-        value={entry.journaltitel}
-        name="journaltitel"
+        id="entryTitle"
+        value={entry.entryTitel}
+        name="entryTitel"
         type="text"
         maxLength="20"
         onChange={handleChange}
-        pattern="[A-Z0-9]+"
+        pattern="^[^\sa0-9].*$"
         required
       />
-      <label htmlFor="journalentry">Journal Entry:</label>
+      <label htmlFor="journalEntry">Journal Entry:</label>
       <textarea
-        value={entry.journalentry}
+        value={entry.journalEntry}
         rows="10"
         type="text"
-        name="journalentry"
+        name="journalEntry"
         maxLength="200"
         onChange={handleChange}
-        pattern="[A-Z0-9]+"
+        pattern="^[^\sa0-9].*$"
         required
       />
       <button type="submit"> Add Entry to Journal</button>
-      <StyledSection>
-        <h2>DESTINATION : {entry.destination} </h2>
-        <p> START {entry.from}</p>
-        <p>END{entry.to}</p>
-        <p>TITLE :{entry.journaltitel}</p>
-        <p>ENTRTY :{entry.journalentry}</p>
-      </StyledSection>
     </StyledForm>
+    {isSubmitClicked && <EntryListComponent data={data} />}
+</>
   );
 }
 
-const StyledSection = styled.section`
-  display: grid;
-  flex-direction: row;
-  top: 100px;
-  border: 2px solid black;
-  border-radius: 1rem;
-  color: black;
-  gap: 1rem;
-  margin: 0%;
-  padding: 20%;
-`;
-
 const StyledForm = styled.form`
   display: grid;
-  flex-direction: row;
   top: 50px;
   border: 2px solid black;
   border-radius: 2rem;
-  color: black;
+  color: drakblue;
   gap: 1rem;
-  margin: 0%;
-  padding: 10%;
+  padding: 10px;
+  margin: 10px;
   background-color: #white;
+`;
+
+const StyledDate = styled.ul`
+display: center;
+flex-direction: row;
+gap: 2em;
 `;

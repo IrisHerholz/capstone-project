@@ -13,15 +13,17 @@ export default function Header() {
 
 const StyledHeader = styled.header`
   background-color: #6495ed;
-  postion: fixed;
+  postion: fixed; 
+   top: 20px;
+  display: center;
   text-align: center;
-  color: #87cefa;
-  font-size: 2em;
   line-height: 2em;
   padding: 10px;
-  margin: 30px;
-  top: 10px;
-  border: 1px solid lightgray;
-  border-radius: 2em;
-  font-size: 1rem;
+  margin: 10px;
+  border: 5px solid lightblue;
+  border-radius: 1em;
+  border-bottom-color: darkblue;
+  color: darkblue;
+  font-weight: 0,5em;
+  
 `;

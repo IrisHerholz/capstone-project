@@ -34,19 +34,19 @@ export default Navigation;
 //styled-components
 
 const StyledFooter = styled.footer`
-  position: fixed;
   bottom: 20px;
-  color: black;
-  width: 100%;
   background-color: #6495ed;
-  text-align: center;
-  color: #87cefa;
+  postion: fixed; 
+  display: center;
+  text-align: evenly space;
+  color: drakblue;
   line-height: 1em;
-  border: 2px solid lightgray;
-  border-radius: 2em;
-  font-size: 2em;
   padding: 10px;
-  margin: 30px;
+  margin: 10px;
+  border: 5px solid lightblue;
+  border-radius: 1em;
+  font-size: 1rem;
+  border-bottom-color: darkblue;
 `;
 
 const StyledNav = styled.nav`
