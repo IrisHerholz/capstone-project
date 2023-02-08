@@ -1,4 +1,4 @@
-import React from "react";
+
 import styled from "styled-components";
 import { useState } from "react";
 import EntryListComponent from "@/pages/entrylist";
@@ -24,7 +24,6 @@ export default function EntryForm(dData) {
     event.preventDefault();
     setData(entry);
     setIsSubmitClicked(true);
-
   }
   return ( 
 <>
@@ -36,12 +35,12 @@ export default function EntryForm(dData) {
       onChange={handleChange}
       pattern="^[^\sa0-9].*$"
       required
-      id="destination"
+      id="1"
     />
     <StyledDate> 
     <label htmlFor="from">START</label>
       <input
-        id="from"
+        id="2"
         value={entry.from}
         name="from"
         type="date"
@@ -49,7 +48,7 @@ export default function EntryForm(dData) {
       />
       <label htmlFor="to">END</label>
       <input
-        id="to"
+        id="3"
         value={entry.to}
         name="to"
         type="date"
@@ -58,7 +57,7 @@ export default function EntryForm(dData) {
       </StyledDate>
       <label htmlFor="entryTitle">Entry Title:</label>
       <input
-        id="entryTitle"
+        id="4"
         value={entry.entryTitel}
         name="entryTitel"
         type="text"
@@ -69,6 +68,7 @@ export default function EntryForm(dData) {
       />
       <label htmlFor="journalEntry">Journal Entry:</label>
       <textarea
+      id="5"
         value={entry.journalEntry}
         rows="5"
         type="text"
@@ -111,3 +111,5 @@ display: center;
 flex-direction: row;
 gap: 3em;
 `;
+
+

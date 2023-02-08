@@ -3,7 +3,6 @@ import { useState } from "react";
 
 import EntryForm from "@/components/EntryForm";
 
-
 export default function Landingpage() {
   const [output, setOutput] = useState("");
   const [isClicked, setIsClicked] = useState(false);
