@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 
 export default function Landingpage() {
   const [output, setOutput] = useState("");
+  const [isClicked, setIsClicked] = useState(false);
   const router = useRouter();
 
   const handleSubmit = (event) => {
@@ -37,11 +38,11 @@ export default function Landingpage() {
             inputColor="rebeccapurple"
           />
           <StyledButton type="submit">start your journey</StyledButton>
-          <Link
+          <StyledLink
           href="entryform"
           className={router.pathname === "/entryform"}
         > {output}
-        </Link>  
+        </StyledLink>  
         </StyledForm>
       </main>
     </>
@@ -70,7 +71,7 @@ padding: 0.25em 1em;
 border: 1px solid blue;
 border-radius: 1px;
 `;
-const StyledLink= styled.a`
+const StyledLink= styled(Link)`
   padding: 1px;
   margin: 1px;
   font-size: 1em;
