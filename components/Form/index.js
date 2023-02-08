@@ -1,4 +1,4 @@
-
+import React from "react";
 import styled from "styled-components";
 import { useState } from "react";
 import EntryListComponent from "@/pages/entrylist";
@@ -14,7 +14,6 @@ export default function EntryForm(dData) {
   const [data, setData] = useState([]);
   const [state, setState] = useState({ data: "" })
   const [isSubmitClicked, setIsSubmitClicked] = useState(false)
-  
   function handleChange(event) {
     setEntry({
       ...entry,
@@ -25,6 +24,7 @@ export default function EntryForm(dData) {
     event.preventDefault();
     setData(entry);
     setIsSubmitClicked(true);
+
   }
   return ( 
 <>
@@ -69,7 +69,6 @@ export default function EntryForm(dData) {
       />
       <label htmlFor="journalEntry">Journal Entry:</label>
       <textarea
-      id="5"
         value={entry.journalEntry}
         rows="5"
         type="text"
@@ -112,5 +111,3 @@ display: center;
 flex-direction: row;
 gap: 3em;
 `;
-
-

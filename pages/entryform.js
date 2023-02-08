@@ -63,8 +63,6 @@ export default function EntryFormPage() {
       />
          <button type="submit"> Add Entry to Journal </button>
     </StyledForm>
-
-
     
     <EntryListStyle>
       {journalEntries.map((journalEntry) => {

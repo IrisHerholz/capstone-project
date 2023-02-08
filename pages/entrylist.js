@@ -1,9 +1,9 @@
-import EntryForm from "@/components/EntryForm";
+import EntryFormPage from "@/pages/entryform";
 
-export default function EntryFormPage() {
+export default function EntryListPage() {
   return (
     <>
-    <EntryForm  />
+    <EntryFormPage  />
     </>
   );
 }

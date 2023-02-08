@@ -2,11 +2,9 @@ import styled from "styled-components";
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import EntryForm from "@/components/EntryForm";
 
 export default function Landingpage() {
   const [output, setOutput] = useState("");
-  const [isClicked, setIsClicked] = useState(false);
   const router = useRouter();
 
   const handleSubmit = (event) => {
@@ -46,7 +44,6 @@ export default function Landingpage() {
         </Link>  
         </StyledForm>
       </main>
-     { isClicked &&  <EntryForm destValue = {output} />}
     </>
   );
 }
