@@ -6,16 +6,6 @@ export default createGlobalStyle`
   *::after {
     box-sizing: border-box;
     color: darkblue;
-    background-color: #whitesmoke;
-  }
-  body {
-    margin: 0;
-  }
-  main {
-    position: relative;
-    top: 5rem;
-    margin: 0 auto;
-    max-width: 368px;
-    padding: 0.5em 1em;
+    font-family: arial;
   }
 `;

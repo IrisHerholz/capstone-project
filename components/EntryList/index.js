@@ -1,30 +1,22 @@
-import { titles } from "/lib/data.js";
 import styled from "styled-components";
+import { useState } from "react";
 
-export default function EntryListComponent() {
+export default function EntryListComponent( data  ) {
   return (
     <>
-      <header>
-        <Heading>Your Entries</Heading>
-      </header>
-      <EntryList>
-        {titles.map((title) => (
-          <ListEntry key={title.id}>
-            <p> Date: {title.date}</p>
-            <p> Title: {title.entryTitle}</p>
-            <p> Name: {title.entry}</p>
+      <EntryListStyle>
+          <ListEntry key={data.id}>
+          <p> Destination: {data.destination}</p> 
+            <p> {data.from}  to  {data.to}</p>
+            <p> Title: {data.entryTitel}</p>
+            <p> Entry: {data.journalEntry}</p>
           </ListEntry>
-        ))}
-      </EntryList>
+      </EntryListStyle>
     </>
   );
 }
 
-const Heading = styled.h2`
-  position: relative;
-  text-align: center;
-  font-size: 1, 2em;
-`;
+
 const ListEntry = styled.li`
   position: relative;
   font-size: 1em;
@@ -36,7 +28,7 @@ const ListEntry = styled.li`
   margin: 5px;
   padding: 3px;
 `;
-const EntryList = styled.ul`
+const EntryListStyle = styled.ul`
   max-width: 368px;
   list-style: none;
   margin: 0 auto;

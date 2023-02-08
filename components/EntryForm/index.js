@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useState } from "react";
-import EntryListComponent from "../EntryList";
+import EntryListComponent from "@/pages/entrylist";
 
 export default function EntryForm(dData) {
   const [entry, setEntry] = useState({
@@ -24,17 +24,19 @@ export default function EntryForm(dData) {
     event.preventDefault();
     setData(entry);
     setIsSubmitClicked(true);
+
   }
   return ( 
 <>
-  <StyledForm onSubmit={handleSubmit}>
+  <StyledForm   onSubmit={(event) => handleSubmit(event)}>
     <label htmlFor="destination">Your Destination:</label>
-    <textarea
+    <Textarea1
       name="destination"
       value={dData.destValue}
       onChange={handleChange}
       pattern="^[^\sa0-9].*$"
       required
+      id="destination"
     />
     <StyledDate> 
     <label htmlFor="from">START</label>
@@ -60,7 +62,7 @@ export default function EntryForm(dData) {
         value={entry.entryTitel}
         name="entryTitel"
         type="text"
-        maxLength="20"
+        maxLength="33"
         onChange={handleChange}
         pattern="^[^\sa0-9].*$"
         required
@@ -68,7 +70,7 @@ export default function EntryForm(dData) {
       <label htmlFor="journalEntry">Journal Entry:</label>
       <textarea
         value={entry.journalEntry}
-        rows="10"
+        rows="5"
         type="text"
         name="journalEntry"
         maxLength="200"
@@ -76,12 +78,21 @@ export default function EntryForm(dData) {
         pattern="^[^\sa0-9].*$"
         required
       />
-      <button type="submit"> Add Entry to Journal</button>
+      <button type="submit"> Add Entry to Journal </button>
     </StyledForm>
     {isSubmitClicked && <EntryListComponent data={data} />}
 </>
   );
 }
+const Textarea1 = styled.textarea`
+padding: 1px;
+margin: 1px;
+font-size: 1em;
+font-weight: bold;
+text-decoration: none;
+background-color: lightblue;
+display: center;
+`;
 
 const StyledForm = styled.form`
   display: grid;
@@ -89,14 +100,14 @@ const StyledForm = styled.form`
   border: 2px solid black;
   border-radius: 2rem;
   color: drakblue;
-  gap: 1rem;
+  gap: 0,5rem;
   padding: 10px;
   margin: 10px;
   background-color: #white;
 `;
 
-const StyledDate = styled.ul`
+const StyledDate = styled.p`
 display: center;
 flex-direction: row;
-gap: 2em;
+gap: 3em;
 `;

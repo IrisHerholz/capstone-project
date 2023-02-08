@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { useState } from "react";
+
 import EntryForm from "@/components/EntryForm";
+
 
 export default function Landingpage() {
   const [output, setOutput] = useState("");
@@ -23,61 +25,54 @@ export default function Landingpage() {
     <>
       <main>
         <StyledForm onSubmit={handleSubmit}>
-          <StyledLegend>Where is your journey going?</StyledLegend>
-          <StyledLabel htmlFor="text">City or Country</StyledLabel>
-          <input
+          <legend>Where is your journey going?</legend>
+          <label htmlFor="text">City or Country?</label>
+          <StyledInput
             type="text"
             required
             id="text"
             name="text"
             pattern="^[^\sa0-9].*$"
-            maxLength="20"
+            maxLength="33"
             placeholder="enter your destination..."
+            inputColor="rebeccapurple"
           />
-          <StyledButton1 type="submit">Submit</StyledButton1>
-          <p>{output}</p>
+          <StyledButton type="submit">start your journey</StyledButton>
+                  <StyledLink href="entryform" onClick={onLinkClick}> {output} </StyledLink>       
         </StyledForm>
-        <StyledA href="entryform" onClick={onLinkClick}>start your journal</StyledA>
       </main>
-     { isClicked &&  <EntryForm destValue = {output}/>}
+     { isClicked &&  <EntryForm destValue = {output} />}
     </>
   );
 }
-
-//styled-components
-
+//styled-component
+const StyledInput = styled.input`
+  padding: 0.5em;
+  margin: 0.5em;
+  background: papayawhip;
+  border: none;
+  border-radius: 2px;
+`;
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   text-align: center;
-  top: 150px;
-  border: 1px solid black;
-  border-radius: 1rem;
-  color: black;
-  gap: 1rem;
-  padding: 5%;
-`;
-
-const StyledLegend = styled.legend`
-  font-size: 0, 5em;
-`;
-const StyledLabel = styled.label`
+  padding: 1%;
+margin: 1%;
   font-size: 1em;
 `;
-const StyledButton1 = styled.button`
-  margin: 0px;
-  padding: 0px;
-  height: 30px;
-  width: 100px;
+const StyledButton = styled.button`
+font-size: 1em;
+margin: 1em;
+padding: 0.25em 1em;
+border: 1px solid blue;
+border-radius: 1px;
 `;
-const StyledA = styled.a`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-  margin: 80px;
-  border: 1px solid black;
-  border-radius: 1rem;
-  color: black;
+const StyledLink= styled.a`
+  padding: 1px;
+  margin: 1px;
+  font-size: 1em;
+font-weight: bold;
+text-decoration: none;
+background-color: lightblue;
 `;

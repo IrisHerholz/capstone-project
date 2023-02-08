@@ -1,13 +1,8 @@
-import Form from "@/components/EntryForm";
-
-export default function EntryFormPage( { output }) {
+import EntryForm from "@/components/EntryForm";
+export default function EntryFormPage() {
   return (
-    <>    
-    <div>
-      {output}
-         </div>
-      <Form />
-      </>
-
+    <>
+   <EntryForm />
+    </>
   );
 }

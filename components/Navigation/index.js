@@ -15,7 +15,7 @@ const Navigation = () => {
         </StyledNextLink>
         <StyledNextLink
           href="entryform"
-          className={router.pathname === "entryform" ? "active" : ""}
+          className={router.pathname === "/entryform" ? "active" : ""}
         >
           NEW ENTRY
         </StyledNextLink>
@@ -34,21 +34,18 @@ export default Navigation;
 //styled-components
 
 const StyledFooter = styled.footer`
-  bottom: 20px;
+  bottom: 0px;
   background-color: #6495ed;
-  postion: fixed; 
-  display: center;
-  text-align: evenly space;
-  color: drakblue;
-  line-height: 1em;
-  padding: 10px;
-  margin: 10px;
+  postion: relative; 
+  color: darkblue;
+  line-height: 1rem;
+  padding: 0px;
+  margin: 0px;
   border: 5px solid lightblue;
   border-radius: 1em;
-  font-size: 1rem;
+  font-size: 0.85em;
   border-bottom-color: darkblue;
 `;
-
 const StyledNav = styled.nav`
   display: flex;
   flex-direction: row;
@@ -56,10 +53,8 @@ const StyledNav = styled.nav`
   justify-content: space-evenly;
 `;
 const StyledNextLink = styled(Link)`
-  text-decoration: none;
-  color: black;
   padding: 10px;
-  margin: 30px;
+  margin: 10px;
   border-radius: 1rem;
   &.active {
     background-color: lightblue;

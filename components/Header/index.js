@@ -25,5 +25,5 @@ const StyledHeader = styled.header`
   border-bottom-color: darkblue;
   color: darkblue;
   font-weight: 0,5em;
-  
+
 `;
