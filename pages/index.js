@@ -1,11 +1,13 @@
 import styled from "styled-components";
 import { useState } from "react";
-
+import Link from "next/link";
+import { useRouter } from "next/router";
 import EntryForm from "@/components/EntryForm";
 
 export default function Landingpage() {
   const [output, setOutput] = useState("");
   const [isClicked, setIsClicked] = useState(false);
+  const router = useRouter();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -37,7 +39,11 @@ export default function Landingpage() {
             inputColor="rebeccapurple"
           />
           <StyledButton type="submit">start your journey</StyledButton>
-                  <StyledLink href="entryform" onClick={onLinkClick}> {output} </StyledLink>       
+          <Link
+          href="entryform"
+          className={router.pathname === "/entryform"}
+        > {output}
+        </Link>  
         </StyledForm>
       </main>
      { isClicked &&  <EntryForm destValue = {output} />}

@@ -63,13 +63,15 @@ export default function EntryFormPage() {
       />
          <button type="submit"> Add Entry to Journal </button>
     </StyledForm>
+
+
+    
     <EntryListStyle>
       {journalEntries.map((journalEntry) => {
         return (
           <ListEntry key={journalEntry.id}>
           <p> {journalEntry.name}</p> 
         <p> from {journalEntry.from} to {journalEntry.to}</p>
-      
    <p>  Title: {journalEntry.entryTitle}</p>
            <p> Entry: {journalEntry.journalEntry}</p>
           </ListEntry>

@@ -14,6 +14,7 @@ export default function EntryForm(dData) {
   const [data, setData] = useState([]);
   const [state, setState] = useState({ data: "" })
   const [isSubmitClicked, setIsSubmitClicked] = useState(false)
+  
   function handleChange(event) {
     setEntry({
       ...entry,
