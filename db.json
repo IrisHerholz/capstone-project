@@ -1,26 +1,50 @@
 [
     {
-      "destination": "Costa Blanca",
+      "destination": "Costa Rica",
       "from": "XX.XX.XXXX",
       "to": "XX.XX.XXXX",
-      "entryTitle": "Toll",
-      "journalEntry": "immer wieder",
-      "id": "0"
+      "entryTitle": "impresionante ",
+      "journalEntry": "Lorem ipsum dolor sit ...",
+            "id": "0"
     },
     {
-        "destination": "Costa Blanca",
+        "destination": "Kuba",
         "from": "XX.XX.XXXX",
         "to": "XX.XX.XXXX",
-        "entryTitle": "Toll",
-        "journalEntry": "immer wieder",
-      "id": "1"
+        "entryTitle": "Lindo",
+        "journalEntry": "Lorem ipsum dolor sit ...",
+              "id": "1"
     },
     {
-        "destination": "Costa Blanca",
+        "destination": "Barcelona",
         "from": "XX.XX.XXXX",
         "to": "XX.XX.XXXX",
-        "entryTitle": "Toll",
-        "journalEntry": "immer wieder",
-      "id": "2"
+        "entryTitle": "Caliente",
+        "journalEntry": "Lorem ipsum dolor sit ...",
+              "id": "2"
+    },
+    {
+        "destination": "Kroatien",
+        "from": "XX.XX.XXXX",
+        "to": "XX.XX.XXXX",
+        "entryTitle": "Lijepo",
+        "journalEntry": "Lorem ipsum dolor sit ...",
+              "id": "3"
+    },
+    {
+        "destination": "Italien",
+        "from": "XX.XX.XXXX",
+        "to": "XX.XX.XXXX",
+        "entryTitle": "Bellissima",
+        "journalEntry": "Lorem ipsum dolor sit ...",
+      "id": "4"
+    },
+    {
+        "destination": "Frankreich",
+        "from": "XX.XX.XXXX",
+        "to": "XX.XX.XXXX",
+        "entryTitle": "Formidable",
+        "journalEntry": "Lorem ipsum dolor sit ...",
+      "id": "5"
     }
   ]

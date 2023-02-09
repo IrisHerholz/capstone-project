@@ -1,13 +1,15 @@
 import { v4 as uuidv4 } from "uuid";
-import fakeJournalEntries from "../db.json";
+import fakeJournalEntries from "db.json";
 import useLocalStorageState from "use-local-storage-state";
+
+
 
 export default function EntryListHome() {
   const [journalEntries, setJournalEntries] = useLocalStorageState("journalEntries", {
     defaultValue: [...fakeJournalEntries],
   });
 
-  const createNewJournalEntry = (newJournalEntry) => {
+  const addJournalEntry = (newJournalEntry) => {
     setJournalEntries((oldJournalEntries) => [
       {
         ...newJournalEntry,
