@@ -6,7 +6,7 @@ export default function EntryListHome() {
   const [journalEntries, setJournalEntries] = useLocalStorageState("journalEntries", {
     defaultValue: [...fakeJournalEntries],
   });
-  
+
   const createNewJournalEntry = (newJournalEntry) => {
     setJournalEntries((oldJournalEntries) => [
       {
