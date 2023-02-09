@@ -1,0 +1,50 @@
+[
+    {
+      "destination": "Costa Blanca",
+      "from": "XX.XX.XXXX",
+      "to": "XX.XX.XXXX",
+      "entryTitle": "Toll",
+      "journalEntry": "immer wieder",
+      "id": "0"
+    },
+    {
+        "destination": "Costa Blanca",
+        "from": "XX.XX.XXXX",
+        "to": "XX.XX.XXXX",
+        "entryTitle": "Toll",
+        "journalEntry": "immer wieder",
+      "id": "1"
+    },
+    {
+        "destination": "Costa Blanca",
+        "from": "XX.XX.XXXX",
+        "to": "XX.XX.XXXX",
+        "entryTitle": "Toll",
+        "journalEntry": "immer wieder",
+      "id": "2"
+    },
+    {
+        "destination": "Costa Blanca",
+        "from": "XX.XX.XXXX",
+        "to": "XX.XX.XXXX",
+        "entryTitle": "Toll",
+        "journalEntry": "immer wieder",
+      "id": "3"
+    },
+    {
+        "destination": "Costa Blanca",
+        "from": "XX.XX.XXXX",
+        "to": "XX.XX.XXXX",
+        "entryTitle": "Toll",
+        "journalEntry": "immer wieder",
+      "id": "4"
+    },
+    {
+        "destination": "Costa Blanca",
+        "from": "XX.XX.XXXX",
+        "to": "XX.XX.XXXX",
+        "entryTitle": "Toll",
+        "journalEntry": "immer wieder",
+      "id": "5"
+    }
+  ]

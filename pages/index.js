@@ -39,8 +39,8 @@ export default function Landingpage() {
           />
           <StyledButton type="submit">start your journey</StyledButton>
           <StyledLink
-          href="entryform"
-          className={router.pathname === "/entryform"}
+          href="addNewEntryPage"
+          className={router.pathname === "/addNewEntryPage"}
         > {output}
         </StyledLink>  
         </StyledForm>

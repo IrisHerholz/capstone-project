@@ -1,5 +1,6 @@
+
 import { useState } from "react";
-import EntryForm from "@/components/Form";
+import FormComponent from "@/components/Form";
 
 export default function EntryFormPage() {
   const [journalEntries, setJournalEntries] = useState([]);
@@ -12,7 +13,7 @@ export default function EntryFormPage() {
       <header>
         <h2>Add an Entry</h2>
       </header>
-      <EntryForm onSubmitEvent={addJournalEntry} />
+      <FormComponent onSubmitEvent={addJournalEntry} />
       <header>
         <h2>List of Entries</h2>
       </header>

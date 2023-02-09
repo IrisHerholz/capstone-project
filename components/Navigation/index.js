@@ -2,9 +2,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import styled from "styled-components";
 
-
-
-
 const Navigation = () => {
   const router = useRouter();
   return (
@@ -17,14 +14,14 @@ const Navigation = () => {
           HOME
         </StyledNextLink>
         <StyledNextLink
-          href="entryform"
-          className={router.pathname === "/entryform" ? "active" : ""}
+          href="addNewEntryPage"
+          className={router.pathname === "/addNewEntryPage" ? "active" : ""}
         >
           NEW ENTRY
         </StyledNextLink>
         <StyledNextLink
-          href="/entrylist"
-          className={router.pathname === "/entrylist" ? "active" : ""}
+          href="/entryListPage"
+          className={router.pathname === "/entryListPage" ? "active" : ""}
         >
           ENTRYLIST
         </StyledNextLink>

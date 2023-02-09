@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function EntryForm({
+export default function FormComponent({
   onSubmitEvent = () => {}
 }) {
   function handleSubmit(event) {
