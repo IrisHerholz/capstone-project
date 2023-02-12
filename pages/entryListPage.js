@@ -34,15 +34,6 @@ export default function EntryListHome() {
                           </p>
               <p>Titel: {journalEntry?.entryTitle}</p>
               <p>Entry: {journalEntry?.entry}</p>
-              <button onClick={() => {
-              setJournalEntries(
-                journalEntries.filter((id)=>
-                id !== journalEntry.id
-                )
-              );
-            }}>
-              Delete
-            </button>
             </li>
           );
         })}

@@ -6,6 +6,6 @@ export default createGlobalStyle`
   *::after {
     box-sizing: border-box;
     color: darkblue;
-    font-family: arial;
+    font-family: arial;    
   }
 `;
