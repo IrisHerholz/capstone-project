@@ -11,7 +11,7 @@ export default function EntryFormPage() {
   
   const addJournalEntry = (newEntry) => {
     setJournalEntries([...journalEntries, newEntry]);
-
+    
     <EntryListHome data={journalEntries} />
   };
   return (

@@ -7,21 +7,17 @@ export default function FormComponent({
   onSubmitEvent = () => {}, cityname
 }) {
   const router = useRouter();
-  const [count, setCount] = useState(0);
+
   const [city, setCity] = useState(router?.query?.output);
 
-function getId(){const a= Math.random() *10;
-console.log(a, "value");
-  return a }
 
   function handleSubmit(event) {
     event.preventDefault();
-    setCount(count + 1);
+
 
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
  onSubmitEvent({
-  id: getId(),
       destination: cityname?.output,
       from: data.from,
       to: data.to,
@@ -37,13 +33,13 @@ console.log(a, "value");
   }
   return ( 
 <>
-  <StyledForm   onSubmit={(event) => handleSubmit(event)}>
+  <StyledForm  onSubmit={handleSubmit}>
     <label htmlFor="destination">Your Destination:</label>
     <StyledInput
       name="destination"
       pattern="^[^\sa0-9].*$"
       required
-      id="1"
+      id="destination"
       type="text"
       value={city}
           onChange={() => setCity(cityname?.output)}
@@ -51,20 +47,20 @@ console.log(a, "value");
     <StyledDate> 
     <label htmlFor="from">START</label>
       <input
-        id="2"
+        id="from"
         name="from"
         type="date"
       />
       <label htmlFor="to">END</label>
       <input
-        id="3"
+        id="to"
         name="to"
         type="date"
       />
       </StyledDate>
       <label htmlFor="entryTitle">Entry Title:</label>
       <input
-        id="4"
+        id="entryTitle"
         name="entryTitle"
         type="text"
         maxLength="33"
@@ -73,6 +69,7 @@ console.log(a, "value");
       />
       <label htmlFor="entry">Journal Entry:</label>
       <StyledInput
+      id="entry"
         rows="5"
         type="text"
         name="entry"
@@ -99,11 +96,10 @@ const StyledForm = styled.form`
   top: 50px;
   border: 2px solid black;
   border-radius: 2rem;
-  color: drakblue;
   gap: 0,5rem;
   padding: 10px;
   margin: 10px;
-  background-color: #white;
+  background-color: white;
 `;
 const StyledDate = styled.p`
 display: center;
