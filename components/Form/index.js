@@ -1,21 +1,38 @@
 import styled from "styled-components";
+import { useState } from "react";
+import { useRouter } from "next/router";
+import EntryListHome from "@/pages/entryListPage";
 
 export default function FormComponent({
-  onSubmitEvent = () => {}
+  onSubmitEvent = () => {}, cityname
 }) {
+  const router = useRouter();
+  const [count, setCount] = useState(0);
+  const [city, setCity] = useState(router?.query?.output);
+
+function getId(){const a= Math.random() *10;
+console.log(a, "value");
+  return a }
+
   function handleSubmit(event) {
     event.preventDefault();
+    setCount(count + 1);
 
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
-  
-    onSubmitEvent({
-      destination: data.destination,
+ onSubmitEvent({
+  id: getId(),
+      destination: cityname?.output,
       from: data.from,
       to: data.to,
       entryTitle: data.entryTitle,
       entry: data.entry,
     });
+    
+    router.query.data=data;
+  <EntryListHome data={data}/>
+    
+    setCity(cityname?.output)
     event.target.reset();
   }
   return ( 
@@ -28,6 +45,8 @@ export default function FormComponent({
       required
       id="1"
       type="text"
+      value={city}
+          onChange={() => setCity(cityname?.output)}
     />
     <StyledDate> 
     <label htmlFor="from">START</label>
