@@ -34,15 +34,13 @@ export default Navigation;
 //styled-components
 
 const StyledFooter = styled.footer`
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  line-height: 1rem;
-  background-color: #6495ed;
-  color: darkblue;
+  position: relative;
+  display: center;
   border: 5px solid lightblue;
-  border-radius: 1em;
-  border-bottom-color: darkblue;
+  border-radius: 0, 7em;
+  border-bottom-color: #008080;
+  color: papayawhip;
+  background-color: #5f9ea0;
 `;
 const StyledNav = styled.nav`
   display: flex;

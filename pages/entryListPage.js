@@ -1,6 +1,7 @@
 import useLocalStorageState from "use-local-storage-state";
 import fakeEntries from "../db.json";
 import { nanoid } from "nanoid";
+import styled from "styled-components";
 
 export default function EntryListHome() {
   const [journalEntries, setJournalEntries] = useLocalStorageState(
@@ -23,17 +24,15 @@ export default function EntryListHome() {
   }
   return (
     <>
-      <header>
-        <h2>List of Entries</h2>
-      </header>
+      <StyledHeader>List of Entries</StyledHeader>
       <ul>
         {journalEntries.map((journalEntry) => (
-          <li key={journalEntry.id}>
-            <h3>{journalEntry.destination}</h3>
+          <StyledEntry key={journalEntry.id}>
+            <h4>{journalEntry.destination}</h4>
             <div>
               from {journalEntry.from} to {journalEntry.to}
             </div>
-            <h4>Titel: {journalEntry.entryTitle}</h4>
+            <h5>Titel: {journalEntry.entryTitle}</h5>
             <p>{journalEntry.entry}</p>
             <button
               type="button"
@@ -41,9 +40,19 @@ export default function EntryListHome() {
             >
               delete
             </button>
-          </li>
+          </StyledEntry>
         ))}
       </ul>
     </>
   );
 }
+
+const StyledEntry = styled.li`
+  border: 2px solid green;
+  display: grid;
+  text-align: center;
+  flex-direction: column;
+`;
+const StyledHeader = styled.h2`
+  text-align: center;
+`;

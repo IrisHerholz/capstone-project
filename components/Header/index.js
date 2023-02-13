@@ -12,13 +12,12 @@ export default function Header() {
 //styled-components
 
 const StyledHeader = styled.header`
-  position: absolute;
-  bottom: 0;
+  position: relative;
   width: 100%;
-  line-height: 1rem;
-  background-color: #6495ed;
-  color: darkblue;
+  text-align: center;
+  background-color: #5f9ea0;
   border: 5px solid lightblue;
-  border-radius: 1em;
-  border-bottom-color: darkblue;
+  border-radius: 0, 7em;
+  border-bottom-color: #008080;
+  color: papayawhip;
 `;

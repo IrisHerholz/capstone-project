@@ -37,12 +37,12 @@ export default function FormComponent({ onSubmitEvent = () => {}, cityname }) {
           value={city}
           onChange={() => setCity(cityname?.output)}
         />
-        <p>
+        <StyledDate>
           <label htmlFor="from">from</label>
           <input id="from" name="from" type="date" />
           <label htmlFor="to">to</label>
           <input id="to" name="to" type="date" />
-        </p>
+        </StyledDate>
         <label htmlFor="entryTitle">Entry Title:</label>
         <input
           id="entryTitle"
@@ -55,7 +55,7 @@ export default function FormComponent({ onSubmitEvent = () => {}, cityname }) {
         <label htmlFor="entry">Journal Entry:</label>
         <StyledInput
           id="entry"
-          rows="20"
+          rows="10"
           type="text"
           name="entry"
           maxLength="200"
@@ -71,13 +71,19 @@ const StyledInput = styled.input`
   padding: 1px;
   margin: 1px;
   font-size: 1em;
-  font-weight: bold;
   background-color: lightblue;
 `;
+const StyledDate = styled.div`
+  display: flex;
+  flex-direction: oooooo;
+  justify-content: center;
+`;
 const StyledForm = styled.form`
-  display: grid;
-  border: 1px solid black;
-  border-radius: 1rem;
-  padding: 10px;
-  margin: 10px;
+  margin-top: 30px;
+  margin-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.2em;
+  gap: 1em;
 `;

@@ -5,10 +5,10 @@ export default createGlobalStyle`
   *::before,
   *::after {
     box-sizing: border-box;
-    color: darkblue;
-  }
-  body {
-    font-family: 'Carme';
+    color: black;
+  body {  
+     font-family: 'Arial';
+    font-weight: bold;
   }
   main {
     margin: auto;
