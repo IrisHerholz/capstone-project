@@ -2,8 +2,6 @@ import useLocalStorageState from "use-local-storage-state";
 import FormComponent from "@/components/Form";
 import { useRouter } from "next/router";
 import EntryListHome from "./entryListPage"
-import styled from "styled-components";
-
 
 
 export default function EntryFormPage() {
