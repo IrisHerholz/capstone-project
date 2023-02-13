@@ -12,16 +12,13 @@ export default function Header() {
 //styled-components
 
 const StyledHeader = styled.header`
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  line-height: 1rem;
   background-color: #6495ed;
-  postion: fixed; 
-  display: center;
-  text-align: center;
-  line-height: 2em;
-  padding: 10px;
-  margin: 10px;
+  color: darkblue;
   border: 5px solid lightblue;
   border-radius: 1em;
   border-bottom-color: darkblue;
-  color: darkblue;
-  font-weight: 0,5em;
 `;
