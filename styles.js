@@ -6,6 +6,16 @@ export default createGlobalStyle`
   *::after {
     box-sizing: border-box;
     color: darkblue;
-    font-family: arial;    
+  }
+  body {
+    font-family: 'Carme';
+  }
+  main {
+    margin: auto;
+    margin-bottom: 5rem;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 `;

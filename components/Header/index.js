@@ -14,7 +14,6 @@ export default function Header() {
 const StyledHeader = styled.header`
   background-color: #6495ed;
   postion: fixed; 
-   top: 20px;
   display: center;
   text-align: center;
   line-height: 2em;
@@ -25,5 +24,4 @@ const StyledHeader = styled.header`
   border-bottom-color: darkblue;
   color: darkblue;
   font-weight: 0,5em;
-
 `;

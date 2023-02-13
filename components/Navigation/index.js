@@ -34,9 +34,7 @@ export default Navigation;
 //styled-components
 
 const StyledFooter = styled.footer`
-  bottom: 0px;
   background-color: #6495ed;
-  postion: relative; 
   color: darkblue;
   line-height: 1rem;
   padding: 0px;
@@ -55,6 +53,9 @@ const StyledNav = styled.nav`
 const StyledNextLink = styled(Link)`
   padding: 10px;
   margin: 10px;
+  font-size: 1.0em;
+  font-weight: bold;
+  text-decoration: none;
   border-radius: 1rem;
   &.active {
     background-color: lightblue;

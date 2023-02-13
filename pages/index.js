@@ -50,6 +50,8 @@ export default function Landingpage() {
 }
 //styled-component
 const StyledInput = styled.input`
+display: flex;
+  justify-content: center;
   padding: 0.5em;
   margin: 0.5em;
   background: papayawhip;
@@ -59,10 +61,13 @@ const StyledInput = styled.input`
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   text-align: center;
   padding: 1%;
 margin: 1%;
   font-size: 1em;
+  width: 100%;
+
 `;
 const StyledButton = styled.button`
 font-size: 1em;

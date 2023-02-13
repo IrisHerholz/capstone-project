@@ -89,7 +89,7 @@ font-size: 1em;
 font-weight: bold;
 text-decoration: none;
 background-color: lightblue;
-display: center;
+
 `;
 const StyledForm = styled.form`
   display: grid;
@@ -99,10 +99,10 @@ const StyledForm = styled.form`
   gap: 0,5rem;
   padding: 10px;
   margin: 10px;
-  background-color: white;
 `;
 const StyledDate = styled.p`
 display: center;
 flex-direction: row;
-gap: 3em;
+gap: 2em;
+font-size: 0.9em;
 `;
