@@ -1,7 +1,8 @@
 import GlobalStyle from "@/styles";
 import Head from "next/head";
 import Header from "../components/Header";
-import Navigation from "../components/Navigation/nav.index";
+import Navigation from "../components/Navigation/index";
+
 
 export default function App({ Component, pageProps }) {
   return (

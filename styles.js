@@ -5,16 +5,17 @@ export default createGlobalStyle`
   *::before,
   *::after {
     box-sizing: border-box;
-  font-family: monda;
+    color: darkblue;
   }
   body {
-    margin: 0;
+    font-family: 'Carme';
   }
   main {
-    position: relative;
-    top: 5rem;
-    margin: 0 auto;
-    max-width: 368px;
-    padding: 0.5em 1em;
+    margin: auto;
+    margin-bottom: 5rem;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 `;

@@ -9,14 +9,19 @@ export default function Header() {
     </>
   );
 }
+//styled-components
 
 const StyledHeader = styled.header`
-  padding: 12px;
-  background-color: #f1f1f1;
-  position: relative;
+  background-color: #6495ed;
+  postion: fixed; 
+  display: center;
   text-align: center;
-  color: black;
-  font-size: 1.125em;
-  line-height: 1.6em;
-  border-radius: 4px;
+  line-height: 2em;
+  padding: 10px;
+  margin: 10px;
+  border: 5px solid lightblue;
+  border-radius: 1em;
+  border-bottom-color: darkblue;
+  color: darkblue;
+  font-weight: 0,5em;
 `;

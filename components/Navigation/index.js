@@ -14,8 +14,14 @@ const Navigation = () => {
           HOME
         </StyledNextLink>
         <StyledNextLink
-          href="/EntryListPage"
-          className={router.pathname === "/EntryListPage" ? "active" : ""}
+          href="addNewEntryPage"
+          className={router.pathname === "/addNewEntryPage" ? "active" : ""}
+        >
+          NEW ENTRY
+        </StyledNextLink>
+        <StyledNextLink
+          href="/entryListPage"
+          className={router.pathname === "/entryListPage" ? "active" : ""}
         >
           ENTRYLIST
         </StyledNextLink>
@@ -28,29 +34,30 @@ export default Navigation;
 //styled-components
 
 const StyledFooter = styled.footer`
-  font-size: 0, 5em;
-  position: fixed;
-  bottom: 0;
-  color: black;
-  width: 100%;
-  height: 70px;
-  border: 1px solid black;
+  background-color: #6495ed;
+  color: darkblue;
+  line-height: 1rem;
+  padding: 0px;
+  margin: 0px;
+  border: 5px solid lightblue;
+  border-radius: 1em;
+  font-size: 0.85em;
+  border-bottom-color: darkblue;
 `;
-
 const StyledNav = styled.nav`
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  padding: 1px;
-  margin: 0px;
-  border: 1px solid black;
-  color: black;
+  align-items: center;
+  justify-content: space-evenly;
 `;
 const StyledNextLink = styled(Link)`
   padding: 10px;
-  margin: 20px;
-  border: 2px solid black;
+  margin: 10px;
+  font-size: 1.0em;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 1rem;
   &.active {
-    background-color: lightgrey;
+    background-color: lightblue;
   }
 `;

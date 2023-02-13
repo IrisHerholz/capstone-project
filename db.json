@@ -1,0 +1,26 @@
+[
+    {
+      "destination": "Costa Rica",
+      "from": "03.03.2022",
+      "to": "21.03.2022",
+      "entryTitle": "Impresionante",
+      "entry": "Lorem ipsum dolor sit ...",
+            "id": "0"
+    },
+    {
+        "destination": "Kuba",
+        "from": "01.04.2022",
+        "to": "14.04.2022",
+        "entryTitle": "Lindo",
+        "entry": "Lorem ipsum dolor sit ...",
+              "id": "1"
+    },
+    {
+        "destination": "Barcelona",
+        "from": "01.05.2022",
+        "to": "14.05.2022",
+        "entryTitle": "Caliente",
+        "entry": "Lorem ipsum dolor sit ...",
+              "id": "2"
+    }
+  ]

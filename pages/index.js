@@ -1,54 +1,85 @@
 import styled from "styled-components";
 import { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Landingpage() {
   const [output, setOutput] = useState("");
+  const [isClicked, setIsClicked] = useState(false);
+  const router = useRouter();
+
   const handleSubmit = (event) => {
     event.preventDefault();
+
     const entry = event.target.elements.text.value;
     setOutput(entry);
+    event.target.reset();
   };
+
+  const onLinkClick = (event) => {
+    event.preventDefault();
+    setIsClicked(true);
+  };
+
   return (
     <>
       <main>
-        <form onSubmit={handleSubmit}>
-          <StyledFieldset>
-            <StyledLegend>Where is your journey going?</StyledLegend>
-            <StyledLabel htmlFor="text">City or Country</StyledLabel>
-            <input
-              type="text"
-              required
-              id="text"
-              name="text"
-              pattern="^[^\sa0-9].*$"
-              maxLength="20"
-              placeholder="enter your destination..."
-            />
-            <StyledButton type="submit">Submit</StyledButton>
-            <p>{output}</p>
-          </StyledFieldset>
-        </form>
+        <StyledForm onSubmit={handleSubmit}>
+          <legend>Where is your journey going?</legend>
+          <label htmlFor="text">City or Country?</label>
+          <StyledInput
+            type="text"
+            required
+            id="text"
+            name="text"
+            pattern="^[^\sa0-9].*$"
+            maxLength="33"
+            placeholder="enter your destination..."
+            inputColor="rebeccapurple"
+          />
+          <StyledButton type="submit">submit</StyledButton>
+          <StyledLink
+         href={{ pathname: "./addNewEntryPage", query: { output } }}
+        > {output}
+        </StyledLink>  
+        </StyledForm>
       </main>
     </>
   );
 }
-
-//styled-components
-
-const StyledFieldset = styled.fieldset`
-  margin: px;
-  width: 50%;
-  height: 100%;
+//styled-component
+const StyledInput = styled.input`
+display: flex;
+  justify-content: center;
+  padding: 0.5em;
+  margin: 0.5em;
+  background: papayawhip;
+  border: none;
+  border-radius: 2px;
 `;
-const StyledLegend = styled.legend`
-  font-size: 0, 5em;
-`;
-const StyledLabel = styled.label`
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 1%;
+margin: 1%;
   font-size: 1em;
+  width: 100%;
+
 `;
 const StyledButton = styled.button`
-  margin: 0px;
-  padding: 0px;
-  height: 30px;
-  width: 100px;
+font-size: 1em;
+margin: 1em;
+padding: 0.25em 1em;
+border: 1px solid blue;
+border-radius: 1px;
+`;
+const StyledLink= styled(Link)`
+  padding: 1px;
+  margin: 1px;
+  font-size: 1em;
+font-weight: bold;
+text-decoration: none;
+background-color: lightblue;
 `;
