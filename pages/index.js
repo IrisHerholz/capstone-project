@@ -39,9 +39,10 @@ export default function Landingpage() {
           />
           <StyledButton type="submit">submit</StyledButton>
           <StyledLink
-         href={{ pathname: "./addNewEntryPage", query: { output } }}
-        > {output}
-        </StyledLink>  
+            href={{ pathname: "./addNewEntryPage", query: { output } }}
+          >
+            {output}
+          </StyledLink>
         </StyledForm>
       </main>
     </>
@@ -49,7 +50,7 @@ export default function Landingpage() {
 }
 //styled-component
 const StyledInput = styled.input`
-display: flex;
+  display: flex;
   justify-content: center;
   padding: 0.5em;
   margin: 0.5em;
@@ -63,23 +64,22 @@ const StyledForm = styled.form`
   justify-content: center;
   text-align: center;
   padding: 1%;
-margin: 1%;
+  margin: 1%;
   font-size: 1em;
   width: 100%;
-
 `;
 const StyledButton = styled.button`
-font-size: 1em;
-margin: 1em;
-padding: 0.25em 1em;
-border: 1px solid blue;
-border-radius: 1px;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 1px solid blue;
+  border-radius: 1px;
 `;
-const StyledLink= styled(Link)`
+const StyledLink = styled(Link)`
   padding: 1px;
   margin: 1px;
   font-size: 1em;
-font-weight: bold;
-text-decoration: none;
-background-color: lightblue;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: lightblue;
 `;

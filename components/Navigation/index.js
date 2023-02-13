@@ -53,7 +53,7 @@ const StyledNav = styled.nav`
 const StyledNextLink = styled(Link)`
   padding: 10px;
   margin: 10px;
-  font-size: 1.0em;
+  font-size: 1em;
   font-weight: bold;
   text-decoration: none;
   border-radius: 1rem;
