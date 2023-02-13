@@ -34,14 +34,14 @@ export default Navigation;
 //styled-components
 
 const StyledFooter = styled.footer`
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  line-height: 1rem;
   background-color: #6495ed;
   color: darkblue;
-  line-height: 1rem;
-  padding: 0px;
-  margin: 0px;
   border: 5px solid lightblue;
   border-radius: 1em;
-  font-size: 0.85em;
   border-bottom-color: darkblue;
 `;
 const StyledNav = styled.nav`
@@ -53,7 +53,7 @@ const StyledNav = styled.nav`
 const StyledNextLink = styled(Link)`
   padding: 10px;
   margin: 10px;
-  font-size: 1em;
+  font-size: 0.8em;
   font-weight: bold;
   text-decoration: none;
   border-radius: 1rem;
