@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import EntryListHome from "@/pages/entryListPage";
+import { nanoid } from "nanoid";
 
 export default function FormComponent({
   onSubmitEvent = () => {}, cityname
@@ -18,6 +19,7 @@ export default function FormComponent({
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
  onSubmitEvent({
+  id: nanoid(),
       destination: cityname?.output,
       from: data.from,
       to: data.to,
