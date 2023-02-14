@@ -24,7 +24,9 @@ export default function EntryListHome() {
   }
   function handleEditJournalEntry(id) {
     const newJournalEntries = [...journalEntries];
-    const index = newJournalEntries.findIndex((je) => je.id === id);
+    const index = newJournalEntries.findIndex(
+      (journalEntry) => journalEntry.id === id
+    );
     newJournalEntries[index] = {
       ...newJournalEntries[index],
       destination: prompt(
