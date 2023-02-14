@@ -1,12 +1,9 @@
 import styled from "styled-components";
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 export default function Landingpage() {
   const [output, setOutput] = useState("");
-  const [isClicked, setIsClicked] = useState(false);
-  const router = useRouter();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -16,18 +13,14 @@ export default function Landingpage() {
     event.target.reset();
   };
 
-  const onLinkClick = (event) => {
-    event.preventDefault();
-    setIsClicked(true);
-  };
-
   return (
-    <>
-      <main>
-        <StyledForm onSubmit={handleSubmit}>
-          <legend>Where is your journey going?</legend>
+    <>  
+     <body>
+      <form onSubmit={handleSubmit}>
+        <StyledFieldset>
+          <StyledLegend>Where is your journey going?</StyledLegend>
           <label htmlFor="text">City or Country?</label>
-          <StyledInput
+          <input
             type="text"
             required
             id="text"
@@ -39,47 +32,38 @@ export default function Landingpage() {
           />
           <StyledButton type="submit">submit</StyledButton>
           <StyledLink
-         href={{ pathname: "./addNewEntryPage", query: { output } }}
-        > {output}
-        </StyledLink>  
-        </StyledForm>
-      </main>
+            href={{ pathname: "./addNewEntryPage", query: { output } }}
+          >
+            {output}
+          </StyledLink>
+        </StyledFieldset>
+      </form>
+   </body>
     </>
   );
 }
 //styled-component
-const StyledInput = styled.input`
-display: flex;
-  justify-content: center;
-  padding: 0.5em;
-  margin: 0.5em;
-  background: papayawhip;
-  border: none;
-  border-radius: 2px;
+const StyledLegend = styled.legend`
+  font-weight: bold;
 `;
-const StyledForm = styled.form`
+const StyledFieldset = styled.fieldset`
+  margin-top: 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  padding: 1%;
-margin: 1%;
-  font-size: 1em;
-  width: 100%;
+  font-size: 1.2em;
+  gap: 1rem;
+`;
 
-`;
 const StyledButton = styled.button`
-font-size: 1em;
-margin: 1em;
-padding: 0.25em 1em;
-border: 1px solid blue;
-border-radius: 1px;
+  font-size: 1.1em;
 `;
-const StyledLink= styled(Link)`
-  padding: 1px;
-  margin: 1px;
-  font-size: 1em;
-font-weight: bold;
-text-decoration: none;
-background-color: lightblue;
+const StyledLink = styled(Link)`
+  padding: 1em;
+  margin: 1em;
+  font-size: 1.5em;
+  font-weight: bold;
+  background-color: papayawhip;
+  border: lightblue dotted;
 `;

@@ -5,12 +5,13 @@ export default createGlobalStyle`
   *::before,
   *::after {
     box-sizing: border-box;
-    color: darkblue;
+         font-family: 'Arial';
+    color: black;    
+  body {  
+
+    font-weight: bold;
   }
-  body {
-    font-family: 'Carme';
-  }
-  main {
+  main { 
     margin: auto;
     margin-bottom: 5rem;
     max-width: 700px;

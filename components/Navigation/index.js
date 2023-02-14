@@ -5,7 +5,7 @@ import styled from "styled-components";
 const Navigation = () => {
   const router = useRouter();
   return (
-    <StyledFooter>
+    <body>    <StyledFooter>
       <StyledNav>
         <StyledNextLink
           href="/"
@@ -26,7 +26,8 @@ const Navigation = () => {
           ENTRYLIST
         </StyledNextLink>
       </StyledNav>
-    </StyledFooter>
+    </StyledFooter></body>
+
   );
 };
 export default Navigation;
@@ -34,15 +35,13 @@ export default Navigation;
 //styled-components
 
 const StyledFooter = styled.footer`
-  background-color: #6495ed;
-  color: darkblue;
-  line-height: 1rem;
-  padding: 0px;
-  margin: 0px;
+  position: relative;
+  display: center;
   border: 5px solid lightblue;
-  border-radius: 1em;
-  font-size: 0.85em;
-  border-bottom-color: darkblue;
+  border-radius: 0, 7em;
+  border-bottom-color: #008080;
+  color: papayawhip;
+  background-color: white;
 `;
 const StyledNav = styled.nav`
   display: flex;
@@ -53,7 +52,7 @@ const StyledNav = styled.nav`
 const StyledNextLink = styled(Link)`
   padding: 10px;
   margin: 10px;
-  font-size: 1.0em;
+  font-size: 0.8em;
   font-weight: bold;
   text-decoration: none;
   border-radius: 1rem;
