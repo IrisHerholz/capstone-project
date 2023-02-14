@@ -2,6 +2,7 @@ import useLocalStorageState from "use-local-storage-state";
 import FormComponent from "@/components/Form";
 import { useRouter } from "next/router";
 import EntryListHome from "./entryListPage"
+import styled from "styled-components";
 
 
 export default function EntryFormPage() {
@@ -16,8 +17,11 @@ export default function EntryFormPage() {
   };
   return (
     <>
-        <h2>Add an Entry</h2>
+        <StyledHeader>Add an Entry</StyledHeader>
       <FormComponent onSubmitEvent={addJournalEntry} cityname = {router.query} />
     </>
   );
 }
+const StyledHeader = styled.h2`
+  text-align: center;
+`;

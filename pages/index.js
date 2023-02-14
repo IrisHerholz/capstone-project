@@ -14,31 +14,31 @@ export default function Landingpage() {
   };
 
   return (
-    <>  
-     <body>
-      <form onSubmit={handleSubmit}>
-        <StyledFieldset>
-          <StyledLegend>Where is your journey going?</StyledLegend>
-          <label htmlFor="text">City or Country?</label>
-          <input
-            type="text"
-            required
-            id="text"
-            name="text"
-            pattern="^[^\sa0-9].*$"
-            maxLength="33"
-            placeholder="enter your destination..."
-            inputColor="rebeccapurple"
-          />
-          <StyledButton type="submit">submit</StyledButton>
-          <StyledLink
-            href={{ pathname: "./addNewEntryPage", query: { output } }}
-          >
-            {output}
-          </StyledLink>
-        </StyledFieldset>
-      </form>
-   </body>
+    <>
+      <body>
+        <form onSubmit={handleSubmit}>
+          <StyledFieldset>
+            <StyledLegend>Where is your journey going?</StyledLegend>
+            <label htmlFor="text">City or Country?</label>
+            <input
+              type="text"
+              required
+              id="text"
+              name="text"
+              pattern="^[^\sa0-9].*$"
+              maxLength="33"
+              placeholder="enter your destination..."
+              inputColor="rebeccapurple"
+            />
+            <StyledButton type="submit">submit</StyledButton>
+            <StyledLink
+              href={{ pathname: "./addNewEntryPage", query: { output } }}
+            >
+              {output}
+            </StyledLink>
+          </StyledFieldset>
+        </form>
+      </body>
     </>
   );
 }
@@ -46,7 +46,7 @@ export default function Landingpage() {
 const StyledLegend = styled.legend`
   font-weight: bold;
 `;
-const StyledFieldset = styled.fieldset`
+const StyledFieldset = styled.section`
   margin-top: 80px;
   display: flex;
   flex-direction: column;
@@ -64,6 +64,5 @@ const StyledLink = styled(Link)`
   margin: 1em;
   font-size: 1.5em;
   font-weight: bold;
-  background-color: papayawhip;
   border: lightblue dotted;
 `;

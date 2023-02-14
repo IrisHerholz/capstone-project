@@ -8,7 +8,6 @@ export default createGlobalStyle`
          font-family: 'Arial';
     color: black;    
   body { 
-    font-weight: bold;
   }
   main { 
     margin: auto;
@@ -18,4 +17,8 @@ export default createGlobalStyle`
     flex-direction: column;
     align-items: center;
   }
+ h2 {
+  text-align: center;
+
+ }
 `;

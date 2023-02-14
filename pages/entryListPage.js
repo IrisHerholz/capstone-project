@@ -27,6 +27,10 @@ export default function EntryListHome() {
     const index = newJournalEntries.findIndex((je) => je.id === id);
     newJournalEntries[index] = {
       ...newJournalEntries[index],
+      destination: prompt(
+        "New destination:",
+        newJournalEntries[index].destination
+      ),
       entryTitle: prompt("New title:", newJournalEntries[index].entryTitle),
       entry: prompt("New entry:", newJournalEntries[index].entry),
     };
@@ -36,16 +40,15 @@ export default function EntryListHome() {
     <>
       <body>
         <StyledHeader>List of Entries</StyledHeader>
-        <ul>
+        <section>
           {journalEntries.map((journalEntry) => (
             <StyledEntry key={journalEntry.id}>
-              <h4>{journalEntry.destination}</h4>
+              <h4>Destination: {journalEntry.destination}</h4>
               <div>
                 from {journalEntry.from} to {journalEntry.to}
               </div>
               <h5>Titel: {journalEntry.entryTitle}</h5>
               <p>{journalEntry.entry}</p>
-
               <button
                 type="button"
                 onClick={() => handleDeleteJournalEntry(journalEntry.id)}
@@ -60,7 +63,7 @@ export default function EntryListHome() {
               </button>
             </StyledEntry>
           ))}
-        </ul>
+        </section>
       </body>
     </>
   );

@@ -5,7 +5,7 @@ import styled from "styled-components";
 const Navigation = () => {
   const router = useRouter();
   return (
-    <body>    <StyledFooter>
+    <StyledFooter>
       <StyledNav>
         <StyledNextLink
           href="/"
@@ -26,8 +26,7 @@ const Navigation = () => {
           ENTRYLIST
         </StyledNextLink>
       </StyledNav>
-    </StyledFooter></body>
-
+    </StyledFooter>
   );
 };
 export default Navigation;
