@@ -14,31 +14,31 @@ export default function Landingpage() {
   };
 
   return (
-    <>
-      <main>
-        <form onSubmit={handleSubmit}>
-          <StyledFieldset>
-            <StyledLegend>Where is your journey going?</StyledLegend>
-            <label htmlFor="text">City or Country?</label>
-            <input
-              type="text"
-              required
-              id="text"
-              name="text"
-              pattern="^[^\sa0-9].*$"
-              maxLength="33"
-              placeholder="enter your destination..."
-              inputColor="rebeccapurple"
-            />
-            <StyledButton type="submit">submit</StyledButton>
-            <StyledLink
-              href={{ pathname: "./addNewEntryPage", query: { output } }}
-            >
-              {output}
-            </StyledLink>
-          </StyledFieldset>
-        </form>
-      </main>
+    <>  
+     <body>
+      <form onSubmit={handleSubmit}>
+        <StyledFieldset>
+          <StyledLegend>Where is your journey going?</StyledLegend>
+          <label htmlFor="text">City or Country?</label>
+          <input
+            type="text"
+            required
+            id="text"
+            name="text"
+            pattern="^[^\sa0-9].*$"
+            maxLength="33"
+            placeholder="enter your destination..."
+            inputColor="rebeccapurple"
+          />
+          <StyledButton type="submit">submit</StyledButton>
+          <StyledLink
+            href={{ pathname: "./addNewEntryPage", query: { output } }}
+          >
+            {output}
+          </StyledLink>
+        </StyledFieldset>
+      </form>
+   </body>
     </>
   );
 }

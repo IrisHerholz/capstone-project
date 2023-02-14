@@ -5,7 +5,7 @@ import styled from "styled-components";
 const Navigation = () => {
   const router = useRouter();
   return (
-    <StyledFooter>
+    <body>    <StyledFooter>
       <StyledNav>
         <StyledNextLink
           href="/"
@@ -26,7 +26,8 @@ const Navigation = () => {
           ENTRYLIST
         </StyledNextLink>
       </StyledNav>
-    </StyledFooter>
+    </StyledFooter></body>
+
   );
 };
 export default Navigation;
@@ -40,7 +41,7 @@ const StyledFooter = styled.footer`
   border-radius: 0, 7em;
   border-bottom-color: #008080;
   color: papayawhip;
-  background-color: #5f9ea0;
+  background-color: white;
 `;
 const StyledNav = styled.nav`
   display: flex;

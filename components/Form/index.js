@@ -37,12 +37,12 @@ export default function FormComponent({ onSubmitEvent = () => {}, cityname }) {
           value={city}
           onChange={() => setCity(cityname?.output)}
         />
-        <StyledDate>
+        <div>
           <label htmlFor="from">from</label>
           <input id="from" name="from" type="date" />
           <label htmlFor="to">to</label>
           <input id="to" name="to" type="date" />
-        </StyledDate>
+        </div>
         <label htmlFor="entryTitle">Entry Title:</label>
         <input
           id="entryTitle"
@@ -73,11 +73,7 @@ const StyledInput = styled.input`
   font-size: 1em;
   background-color: lightblue;
 `;
-const StyledDate = styled.div`
-  display: flex;
-  flex-direction: oooooo;
-  justify-content: center;
-`;
+
 const StyledForm = styled.form`
   margin-top: 30px;
   margin-bottom: 70px;

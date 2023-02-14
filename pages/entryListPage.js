@@ -24,31 +24,33 @@ export default function EntryListHome() {
   }
   return (
     <>
-      <StyledHeader>List of Entries</StyledHeader>
-      <ul>
-        {journalEntries.map((journalEntry) => (
-          <StyledEntry key={journalEntry.id}>
-            <h4>{journalEntry.destination}</h4>
-            <div>
-              from {journalEntry.from} to {journalEntry.to}
-            </div>
-            <h5>Titel: {journalEntry.entryTitle}</h5>
-            <p>{journalEntry.entry}</p>
-            <button
-              type="button"
-              onClick={() => handleDeleteJournalEntry(journalEntry.id)}
-            >
-              delete
-            </button>
-          </StyledEntry>
-        ))}
-      </ul>
+      <body>
+        <StyledHeader>List of Entries</StyledHeader>
+        <ul>
+          {journalEntries.map((journalEntry) => (
+            <StyledEntry key={journalEntry.id}>
+              <h4>{journalEntry.destination}</h4>
+              <div>
+                from {journalEntry.from} to {journalEntry.to}
+              </div>
+              <h5>Titel: {journalEntry.entryTitle}</h5>
+              <p>{journalEntry.entry}</p>
+              <button
+                type="button"
+                onClick={() => handleDeleteJournalEntry(journalEntry.id)}
+              >
+                delete
+              </button>
+            </StyledEntry>
+          ))}
+        </ul>
+      </body>
     </>
   );
 }
 
 const StyledEntry = styled.li`
-  display: grid;
+  display: flex;
   text-align: center;
   flex-direction: column;
 `;
