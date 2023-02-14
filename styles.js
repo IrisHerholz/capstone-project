@@ -7,8 +7,7 @@ export default createGlobalStyle`
     box-sizing: border-box;
          font-family: 'Arial';
     color: black;    
-  body {  
-
+  body { 
     font-weight: bold;
   }
   main { 

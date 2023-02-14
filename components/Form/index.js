@@ -71,7 +71,6 @@ const StyledInput = styled.input`
   padding: 1px;
   margin: 1px;
   font-size: 1em;
-  background-color: lightblue;
 `;
 
 const StyledForm = styled.form`
