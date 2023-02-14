@@ -48,7 +48,6 @@ export default function EntryListHome() {
 }
 
 const StyledEntry = styled.li`
-  border: 2px solid green;
   display: grid;
   text-align: center;
   flex-direction: column;

@@ -44,8 +44,8 @@ export default function Landingpage() {
 }
 //styled-component
 const StyledLegend = styled.legend`
-color: darkgreen;
-font-weight: bold;`;
+  font-weight: bold;
+`;
 const StyledFieldset = styled.fieldset`
   margin-top: 80px;
   display: flex;
@@ -53,11 +53,10 @@ const StyledFieldset = styled.fieldset`
   justify-content: center;
   text-align: center;
   font-size: 1.2em;
-  gap: 2rem;
+  gap: 1rem;
 `;
 
 const StyledButton = styled.button`
-background-color: #6495ed;
   font-size: 1.1em;
 `;
 const StyledLink = styled(Link)`
