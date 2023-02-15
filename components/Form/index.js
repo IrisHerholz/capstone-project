@@ -16,6 +16,7 @@ export default function FormComponent({ onSubmitEvent = () => {}, cityname }) {
     onSubmitEvent({
       id: nanoid(),
       destination: cityname?.output,
+      destination: data.destination,
       from: data.from,
       to: data.to,
       entryTitle: data.entryTitle,
@@ -25,12 +26,15 @@ export default function FormComponent({ onSubmitEvent = () => {}, cityname }) {
     event.target.reset();
   }
   return (
-    <>
+    <> 
+    <main>
+    
       <StyledForm onSubmit={handleSubmit}>
         <label htmlFor="destination">Your Destination:</label>
         <StyledInput
+       
           name="destination"
-          pattern="^[^\sa0-9].*$"
+          //pattern="[A-Z0-9]+"
           required
           id="destination"
           type="text"
@@ -44,42 +48,61 @@ export default function FormComponent({ onSubmitEvent = () => {}, cityname }) {
           <input id="to" name="to" type="date" />
         </div>
         <label htmlFor="entryTitle">Entry Title:</label>
-        <input
+        <StyledInput
           id="entryTitle"
           name="entryTitle"
           type="text"
           maxLength="35"
-          pattern="^[^\sa0-9].*$"
+          //pattern="[A-Z0-9]+"
           required
         />
         <label htmlFor="entry">Journal Entry:</label>
-        <StyledInput
+        <StyledInput    
           id="entry"
-          rows="10"
           type="text"
           name="entry"
-          maxLength="200"
-          pattern="^[^\sa0-9].*$"
+          maxLength="300"
+          //pattern="^[^\sa0-9].*$"
           required
         />
-        <button type="submit">save entry</button>
+        <StyledButton type="submit">submit</StyledButton>
       </StyledForm>
+      </main>
     </>
   );
 }
+
 const StyledInput = styled.input`
-  padding: 1px;
-  margin: 1px;
-  font-size: 1em;
-  background-color: lightblue;
+border-radius: 8px;
+line-hight: 5;
+border-color: lightblue;
 `;
 
-const StyledForm = styled.form`
-  margin-top: 30px;
-  margin-bottom: 70px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+const StyledForm = styled.form`  
+margin-top: 30%;
+margin-left: 5%;
+margin-right: 5%;
+display: flex;
+flex-direction: column;
+padding: 10px;
+border-radius: 20px;
+  box-shadow: 10px 10px 15px silver;
   font-size: 1.2em;
-  gap: 1em;
+  font-weight: kursiv;
+  gap: 0.5em;
+  background-color: #fffaf0;
+`;
+
+const StyledButton = styled.button`
+width: 40%;
+font-size: 0.7em;
+border-radius: 8px;
+background-color: white;
+color: #008080;
+border: 2px solid #008080;
+&:hover {
+  background-color: #008080;
+  color: white;
+  cursor: pointer;
+  }
 `;

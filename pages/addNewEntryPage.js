@@ -1,23 +1,30 @@
 import useLocalStorageState from "use-local-storage-state";
 import FormComponent from "@/components/Form";
 import { useRouter } from "next/router";
-import EntryListHome from "./entryListPage"
-
+import styled from "styled-components";
 
 export default function EntryFormPage() {
   const router = useRouter();
+  const [journalEntries, setJournalEntries] =
+    useLocalStorageState("newJournalEntry");
 
-  const [journalEntries, setJournalEntries] = useLocalStorageState("newJournalEntry");
-  
   const addJournalEntry = (newEntry) => {
     setJournalEntries([...journalEntries, newEntry]);
-    
-    <EntryListHome data={journalEntries} />
   };
   return (
     <>
-        <h2>Add an Entry</h2>
-      <FormComponent onSubmitEvent={addJournalEntry} cityname = {router.query} />
+      <StyledHeader>Add an Entry</StyledHeader>
+      <FormComponent onSubmitEvent={addJournalEntry} cityname={router.query} />
     </>
   );
 }
+const StyledHeader = styled.h2`
+font-size: 2em;
+height: 40%;
+  left: 0;
+  top: 5%;
+  text-align: center;
+  border: 5px solid lightblue;
+  border-radius: 0.7rem;
+  border-bottom-color: #008080;
+`;

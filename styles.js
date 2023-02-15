@@ -4,17 +4,16 @@ export default createGlobalStyle`
   *,
   *::before,
   *::after {
-    box-sizing: border-box;
-         font-family: 'Arial';
-    color: black;    
-  body {  
-
-    font-weight: bold;
+     box-sizing: border-box;
+    font-style: ;
+font-family: 'Arial';  
+color: #008080;      
+  background-color: #f0fff0;
+  body {
+ color: #008080;          
   }
-  main { 
-    margin: auto;
+  main {
     margin-bottom: 5rem;
-    max-width: 700px;
     display: flex;
     flex-direction: column;
     align-items: center;

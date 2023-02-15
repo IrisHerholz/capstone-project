@@ -4,7 +4,8 @@ export default function Header() {
   return (
     <>
       <StyledHeader>
-        <h1>Travel Journal</h1>
+        <h1>mundus.</h1>
+        <p>your travel journal.</p>
       </StyledHeader>
     </>
   );
@@ -12,12 +13,14 @@ export default function Header() {
 //styled-components
 
 const StyledHeader = styled.header`
-  position: relative;
+margin-top: 9%;
+font-size: 1em;
+  left: 0;
+  top: 2%;
   width: 100%;
   text-align: center;
-  background-color: #5f9ea0;
   border: 5px solid lightblue;
-  border-radius: 0, 7em;
+  border-radius: 0.7rem;
   border-bottom-color: #008080;
-  color: papayawhip;
+  background-color: #f0fff0;
 `;

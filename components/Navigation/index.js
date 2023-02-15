@@ -5,28 +5,27 @@ import styled from "styled-components";
 const Navigation = () => {
   const router = useRouter();
   return (
-    <body>    <StyledFooter>
+  <StyledFooter>
       <StyledNav>
         <StyledNextLink
           href="/"
           className={router.pathname === "/" ? "active" : ""}
         >
-          HOME
+          home
         </StyledNextLink>
         <StyledNextLink
           href="addNewEntryPage"
           className={router.pathname === "/addNewEntryPage" ? "active" : ""}
         >
-          NEW ENTRY
-        </StyledNextLink>
+new entry        </StyledNextLink>
         <StyledNextLink
           href="/entryListPage"
           className={router.pathname === "/entryListPage" ? "active" : ""}
         >
-          ENTRYLIST
+          entrylist
         </StyledNextLink>
       </StyledNav>
-    </StyledFooter></body>
+    </StyledFooter>
 
   );
 };
@@ -35,28 +34,39 @@ export default Navigation;
 //styled-components
 
 const StyledFooter = styled.footer`
-  position: relative;
-  display: center;
+border-radius: 0.7rem;
+position: fixed;
+left: 0;
+bottom: 3%;
+width: 100%;
+height: 10%;
+color: white;
+background-color: #f0fff0;
+text-align: center;
   border: 5px solid lightblue;
   border-radius: 0, 7em;
   border-bottom-color: #008080;
-  color: papayawhip;
-  background-color: white;
 `;
 const StyledNav = styled.nav`
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
 `;
 const StyledNextLink = styled(Link)`
-  padding: 10px;
-  margin: 10px;
-  font-size: 0.8em;
   font-weight: bold;
   text-decoration: none;
-  border-radius: 1rem;
+  border-radius: 0.7rem;
   &.active {
-    background-color: lightblue;
+    background-color: pink;
+  }
+  padding: 10px;
+  margin: 10px;
+  font-size: 1em;
+  color: #008080;
+  &:hover {
+    background-color: #008080;
+    color: white;
+    cursor: pointer;
   }
 `;
+
