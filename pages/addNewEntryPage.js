@@ -20,13 +20,11 @@ export default function EntryFormPage() {
 }
 const StyledHeader = styled.h2`
 font-size: 2em;
-height: 20%;
+height: 40%;
   left: 0;
   top: 5%;
-  width: 100%;
   text-align: center;
   border: 5px solid lightblue;
   border-radius: 0.7rem;
   border-bottom-color: #008080;
-  background-color: #f0fff0;
 `;

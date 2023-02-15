@@ -25,7 +25,7 @@ export default function Landingpage() {
             required
             id="text"
             name="text"
-            pattern="^[^\sa0-9].*$"
+           // pattern="^[^\sa0-9].*$"
             maxLength="33"
             placeholder="enter your destination..."
             inputColor="rebeccapurple"
@@ -46,7 +46,7 @@ const StyledLegend = styled.legend`
   font-weight: bold;
 `;
 const StyledSection = styled.section`
-margin-top: 15%;
+margin-top: 10%;
 margin-left: 5%;
 margin-right: 5%;
 display: flex;
@@ -57,6 +57,7 @@ border-radius: 30px;
   box-shadow: 10px 10px 15px silver;
   font-size: 1em;
   gap: 0.9em;
+  background-color: #fffaf0;
 `;
 const StyledButton = styled.button`
 padding: 5px;

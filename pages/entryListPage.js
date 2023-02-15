@@ -71,7 +71,7 @@ export default function EntryListHome() {
               </StyledButton>
               <StyledButton
                 type="button"
-              onClick={() => handleOpenEditForm(journalEntry.id)}
+                onClick={() => handleOpenEditForm(journalEntry.id)}
               >
                 Edit
               </StyledButton>
@@ -105,7 +105,7 @@ const StyledEntry = styled.form`
   background-color: #f0fff0;
 `;
 const StyledHeader = styled.h2`
-font-size: 1.5em;
+  font-size: 1.5em;
   left: 0;
   top: 2%;
   width: 100%;
@@ -118,13 +118,13 @@ font-size: 1.5em;
 const EditFormWrapper = styled.div`
   position: absolute;
   width: 100%;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
   margin-bottom: 200%;
-  font-size: 0.9em;
-  background-color: white;
+  font-size: 1em;
+  background-color: #f0fff0;
 `;
 
 const StyledButton = styled.button`

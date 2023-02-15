@@ -32,7 +32,7 @@ export default function FormComponent({ onSubmitEvent = () => {}, cityname }) {
       <StyledForm onSubmit={handleSubmit}>
         <label htmlFor="destination">Your Destination:</label>
         <StyledInput
-           autocomplete="on"
+       
           name="destination"
           //pattern="[A-Z0-9]+"
           required
@@ -61,7 +61,7 @@ export default function FormComponent({ onSubmitEvent = () => {}, cityname }) {
           id="entry"
           type="text"
           name="entry"
-          maxLength="200"
+          maxLength="300"
           //pattern="^[^\sa0-9].*$"
           required
         />
@@ -74,7 +74,7 @@ export default function FormComponent({ onSubmitEvent = () => {}, cityname }) {
 
 const StyledInput = styled.input`
 border-radius: 8px;
-line-hight: 2;
+line-hight: 5;
 border-color: lightblue;
 `;
 
@@ -90,6 +90,7 @@ border-radius: 20px;
   font-size: 1.2em;
   font-weight: kursiv;
   gap: 0.5em;
+  background-color: #fffaf0;
 `;
 
 const StyledButton = styled.button`

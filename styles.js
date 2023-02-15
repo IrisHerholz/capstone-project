@@ -7,13 +7,13 @@ export default createGlobalStyle`
      box-sizing: border-box;
     font-style: ;
 font-family: 'Arial';  
-  body { 
-    color: #008080;       
+color: #008080;      
+  background-color: #f0fff0;
+  body {
+ color: #008080;          
   }
   main {
-    margin: auto;
     margin-bottom: 5rem;
-    max-width: 700px;
     display: flex;
     flex-direction: column;
     align-items: center;

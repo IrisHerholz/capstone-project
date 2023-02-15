@@ -11,19 +11,18 @@ const Navigation = () => {
           href="/"
           className={router.pathname === "/" ? "active" : ""}
         >
-          HOME
+          home
         </StyledNextLink>
         <StyledNextLink
           href="addNewEntryPage"
           className={router.pathname === "/addNewEntryPage" ? "active" : ""}
         >
-          NEW ENTRY
-        </StyledNextLink>
+new entry        </StyledNextLink>
         <StyledNextLink
           href="/entryListPage"
           className={router.pathname === "/entryListPage" ? "active" : ""}
         >
-          ENTRYLIST
+          entrylist
         </StyledNextLink>
       </StyledNav>
     </StyledFooter>

@@ -4,8 +4,8 @@ export default function Header() {
   return (
     <>
       <StyledHeader>
-        <h1>Mundus</h1>
-        <p>your travel journal</p>
+        <h1>mundus.</h1>
+        <p>your travel journal.</p>
       </StyledHeader>
     </>
   );
@@ -13,7 +13,8 @@ export default function Header() {
 //styled-components
 
 const StyledHeader = styled.header`
-font-size: 1.0em;
+margin-top: 9%;
+font-size: 1em;
   left: 0;
   top: 2%;
   width: 100%;
