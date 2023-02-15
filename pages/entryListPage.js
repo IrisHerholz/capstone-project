@@ -71,9 +71,10 @@ export default function EntryListHome() {
               >
                 Delete
               </StyledButton>
+
               <StyledButton
                 type="button"
-                onClick={() => handleOpenEditForm(journalEntry.id)}
+                onClick={() => setEditingEntry(journalEntry)}
               >
                 Edit
               </StyledButton>
