@@ -28,7 +28,7 @@ export default function EntryListHome() {
       oldJournalEntries.map((journalEntry) => {
         if (journalEntry.id === editingEntry.id) {
           return {
-            ...journalEntry,
+            id: journalEntry.id,
             ...editedEntry,
           };
         }
@@ -37,7 +37,6 @@ export default function EntryListHome() {
     );
     setEditingEntry(null);
   }
-
   function handleDeleteJournalEntry(id) {
     setJournalEntries((oldJournalEntries) =>
       oldJournalEntries.filter((journalEntry) => journalEntry.id !== id)
@@ -109,12 +108,13 @@ const StyledHeader = styled.h2`
 `;
 const EditFormWrapper = styled.div`
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 5px;
+  bottom: 40px;
   width: 100%;
-  height: 90%;
+  height: 100%;
   display: flex;
-  text-align: center;  flex-direction: column;
+  text-align: center;
+  flex-direction: column;
   background-color: lightpink;
   font-weight: bold;
 `;
@@ -130,6 +130,5 @@ const StyledButton = styled.button`
   &:hover {
     background-color: #008080;
     color: white;
-    cursor: pointer;
   }
 `;

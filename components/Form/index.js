@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { nanoid } from "nanoid";
+
 
 export default function FormComponent({ onSubmitEvent = () => {}, cityname }) {
   const router = useRouter();
@@ -14,7 +14,7 @@ export default function FormComponent({ onSubmitEvent = () => {}, cityname }) {
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
     onSubmitEvent({
-      id: nanoid(),
+      
       destination: cityname?.output,
       destination: data.destination,
       from: data.from,

@@ -6,9 +6,12 @@ export default createGlobalStyle`
   *::after {
     box-sizing: border-box;
          font-family: 'Arial';
-color: #008080;;    
+color: #008080;   
+background-color: #f5fffa; 
+
+
   body { 
-    color: black;      
+    color: #008080;   
   }
   main { 
     margin: auto;
