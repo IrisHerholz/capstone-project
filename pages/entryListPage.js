@@ -42,12 +42,6 @@ export default function EntryListHome() {
       oldJournalEntries.filter((journalEntry) => journalEntry.id !== id)
     );
   }
-
-  function handleOpenEditForm(id) {
-    const entryToEdit = journalEntries.find((entry) => entry.id === id);
-    setEditingEntry(entryToEdit);
-  }
-
   function handleCloseEditForm() {
     setEditingEntry(null);
   }
@@ -81,13 +75,11 @@ export default function EntryListHome() {
             </StyledEntry>
           ))}
       </section>
-
       {editingEntry && (
         <EditFormWrapper>
           <StyledHeader>Edit Entry</StyledHeader>
           <FormComponent
             onSubmitEvent={handleEditJournalEntry}
-            onCancelEvent={handleCloseEditForm}
             initialEntry={editingEntry}
           />
           <StyledButton type="button" onClick={handleCloseEditForm}>
