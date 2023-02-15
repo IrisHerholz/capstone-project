@@ -5,7 +5,7 @@ import styled from "styled-components";
 const Navigation = () => {
   const router = useRouter();
   return (
-    <StyledFooter>
+  <StyledFooter>
       <StyledNav>
         <StyledNextLink
           href="/"
@@ -27,6 +27,7 @@ const Navigation = () => {
         </StyledNextLink>
       </StyledNav>
     </StyledFooter>
+
   );
 };
 export default Navigation;
@@ -49,13 +50,22 @@ const StyledNav = styled.nav`
   justify-content: space-evenly;
 `;
 const StyledNextLink = styled(Link)`
-  padding: 10px;
-  margin: 10px;
-  font-size: 0.8em;
   font-weight: bold;
   text-decoration: none;
   border-radius: 1rem;
   &.active {
-    background-color: lightblue;
+    background-color: pink;
+  }
+  padding: 10px;
+  margin: 10px;
+  font-size: 0.8em;
+  background-color: white;
+  color: #008080;
+  border: 2px solid #008080;
+  &:hover {
+    background-color: #008080;
+    color: white;
+    cursor: pointer;
   }
 `;
+

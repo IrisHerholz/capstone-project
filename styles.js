@@ -6,8 +6,9 @@ export default createGlobalStyle`
   *::after {
     box-sizing: border-box;
          font-family: 'Arial';
-    color: black;    
+color: #008080;;    
   body { 
+    color: black;      
   }
   main { 
     margin: auto;
@@ -17,8 +18,4 @@ export default createGlobalStyle`
     flex-direction: column;
     align-items: center;
   }
- h2 {
-  text-align: center;
-
- }
 `;

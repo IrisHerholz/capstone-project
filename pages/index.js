@@ -12,33 +12,30 @@ export default function Landingpage() {
     setOutput(entry);
     event.target.reset();
   };
-
   return (
     <>
-      <body>
-        <form onSubmit={handleSubmit}>
-          <StyledFieldset>
-            <StyledLegend>Where is your journey going?</StyledLegend>
-            <label htmlFor="text">City or Country?</label>
-            <input
-              type="text"
-              required
-              id="text"
-              name="text"
-              pattern="^[^\sa0-9].*$"
-              maxLength="33"
-              placeholder="enter your destination..."
-              inputColor="rebeccapurple"
-            />
-            <StyledButton type="submit">submit</StyledButton>
-            <StyledLink
-              href={{ pathname: "./addNewEntryPage", query: { output } }}
-            >
-              {output}
-            </StyledLink>
-          </StyledFieldset>
-        </form>
-      </body>
+      <form onSubmit={handleSubmit}>
+        <StyledSection>
+          <StyledLegend>Where is your journey going?</StyledLegend>
+          <label htmlFor="text">City or Country?</label>
+          <input
+            type="text"
+            required
+            id="text"
+            name="text"
+            pattern="^[^\sa0-9].*$"
+            maxLength="33"
+            placeholder="enter your destination..."
+            inputColor="rebeccapurple"
+          />
+          <StyledButton type="submit">submit</StyledButton>
+          <StyledLink
+            href={{ pathname: "./addNewEntryPage", query: { output } }}
+          >
+            {output}
+          </StyledLink>
+        </StyledSection>
+      </form>
     </>
   );
 }
@@ -46,7 +43,7 @@ export default function Landingpage() {
 const StyledLegend = styled.legend`
   font-weight: bold;
 `;
-const StyledFieldset = styled.section`
+const StyledSection = styled.section`
   margin-top: 80px;
   display: flex;
   flex-direction: column;
@@ -55,10 +52,23 @@ const StyledFieldset = styled.section`
   font-size: 1.2em;
   gap: 1rem;
 `;
-
 const StyledButton = styled.button`
-  font-size: 1.1em;
+  padding: 10px;
+  margin: 10px;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 1rem;
+  background-color: white;
+  color: #008080;
+  border: 2px solid #008080;
+  &:hover {
+    background-color: #008080;
+    color: white;
+    cursor: pointer;
+  }
 `;
+
 const StyledLink = styled(Link)`
   padding: 1em;
   margin: 1em;

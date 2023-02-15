@@ -15,9 +15,8 @@ const StyledHeader = styled.header`
   position: relative;
   width: 100%;
   text-align: center;
-  background-color: #5f9ea0;
   border: 5px solid lightblue;
-  border-radius: 0, 7em;
+  border-radius: 1.5em;
   border-bottom-color: #008080;
-  color: papayawhip;
+  background-color: white;
 `;

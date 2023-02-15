@@ -5,7 +5,7 @@ import { nanoid } from "nanoid";
 
 export default function FormComponent({ onSubmitEvent = () => {}, cityname }) {
   const router = useRouter();
-
+  
   const [city, setCity] = useState(router?.query?.output);
 
   function handleSubmit(event) {
@@ -62,7 +62,7 @@ export default function FormComponent({ onSubmitEvent = () => {}, cityname }) {
           pattern="^[^\sa0-9].*$"
           required
         />
-        <button type="submit">save entry</button>
+ <StyledButton type="submit">submit</StyledButton>
       </StyledForm>
     </>
   );
@@ -81,4 +81,21 @@ const StyledForm = styled.form`
   justify-content: center;
   font-size: 1.2em;
   gap: 1em;
+`;
+
+const StyledButton = styled.button`
+  padding: 10px;
+  margin: 10px;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 1rem;
+  background-color: white;
+  color: #008080;
+  border: 2px solid #008080;
+  &:hover {
+    background-color: #008080;
+    color: white;
+    cursor: pointer;
+  }
 `;

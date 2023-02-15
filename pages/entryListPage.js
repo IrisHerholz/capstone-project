@@ -1,7 +1,10 @@
+import { useState } from "react";
 import useLocalStorageState from "use-local-storage-state";
 import fakeEntries from "../db.json";
 import { nanoid } from "nanoid";
 import styled from "styled-components";
+
+import FormComponent from "@/components/Form";
 
 export default function EntryListHome() {
   const [journalEntries, setJournalEntries] = useLocalStorageState(
@@ -11,62 +14,86 @@ export default function EntryListHome() {
     }
   );
 
+  const [editingEntry, setEditingEntry] = useState(null);
+
   const addJournalEntry = (newJournalEntry) => {
     setJournalEntries((oldJournalEntries) => [
       { id: nanoid(), ...newJournalEntry },
       ...oldJournalEntries,
     ]);
   };
+
+  function handleEditJournalEntry(editedEntry) {
+    setJournalEntries((oldJournalEntries) =>
+      oldJournalEntries.map((journalEntry) => {
+        if (journalEntry.id === editingEntry.id) {
+          return {
+            ...journalEntry,
+            ...editedEntry,
+          };
+        }
+        return journalEntry;
+      })
+    );
+    setEditingEntry(null);
+  }
+
   function handleDeleteJournalEntry(id) {
-    setJournalEntries(
-      journalEntries.filter((journalEntry) => journalEntry.id !== id)
+    setJournalEntries((oldJournalEntries) =>
+      oldJournalEntries.filter((journalEntry) => journalEntry.id !== id)
     );
   }
-  function handleEditJournalEntry(id) {
-    const newJournalEntries = [...journalEntries];
-    const index = newJournalEntries.findIndex(
-      (journalEntry) => journalEntry.id === id
-    );
-    newJournalEntries[index] = {
-      ...newJournalEntries[index],
-      destination: prompt(
-        "New destination:",
-        newJournalEntries[index].destination
-      ),
-      entryTitle: prompt("New title:", newJournalEntries[index].entryTitle),
-      entry: prompt("New entry:", newJournalEntries[index].entry),
-    };
-    setJournalEntries(newJournalEntries);
+
+  function handleOpenEditForm(id) {
+    const entryToEdit = journalEntries.find((entry) => entry.id === id);
+    setEditingEntry(entryToEdit);
   }
+
+  function handleCloseEditForm() {
+    setEditingEntry(null);
+  }
+
   return (
     <>
-      <body>
-        <StyledHeader>List of Entries</StyledHeader>
-        <section>
-          {journalEntries.map((journalEntry) => (
+      <StyledHeader>List of Entries</StyledHeader>
+      <ul>
+        {journalEntries &&
+          journalEntries.map((journalEntry) => (
             <StyledEntry key={journalEntry.id}>
               <h4>Destination: {journalEntry.destination}</h4>
               <div>
-                from {journalEntry.from} to {journalEntry.to}
+                From {journalEntry.from} to {journalEntry.to}
               </div>
-              <h5>Titel: {journalEntry.entryTitle}</h5>
+              <h5>Title: {journalEntry.entryTitle}</h5>
               <p>{journalEntry.entry}</p>
-              <button
+              <StyledButton
                 type="button"
                 onClick={() => handleDeleteJournalEntry(journalEntry.id)}
               >
-                delete
-              </button>
-              <button
+                Delete
+              </StyledButton>
+              <StyledButton
                 type="button"
-                onClick={() => handleEditJournalEntry(journalEntry.id)}
+                onClick={() => handleOpenEditForm(journalEntry.id)}
               >
-                edit
-              </button>
+                Edit
+              </StyledButton>
             </StyledEntry>
           ))}
-        </section>
-      </body>
+      </ul>
+      {editingEntry && (
+        <EditFormWrapper>
+          <h3>Edit Entry</h3>
+          <FormComponent
+            onSubmitEvent={handleEditJournalEntry}
+            onCancelEvent={handleCloseEditForm}
+            initialEntry={editingEntry}
+          />
+          <StyledButton type="button" onClick={handleCloseEditForm}>
+            Close
+          </StyledButton>
+        </EditFormWrapper>
+      )}
     </>
   );
 }
@@ -78,4 +105,32 @@ const StyledEntry = styled.li`
 `;
 const StyledHeader = styled.h2`
   text-align: center;
+`;
+const EditFormWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  text-align: center;
+  background-color: lightpink;
+  font-weight: bold;
+`;
+
+const StyledButton = styled.button`
+  padding: 10px;
+  margin: 10px;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 1rem;
+  background-color: white;
+  color: #008080;
+  border: 2px solid #008080;
+  &:hover {
+    background-color: #008080;
+    color: white;
+    cursor: pointer;
+  }
 `;
