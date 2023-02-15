@@ -35,33 +35,35 @@ export default Navigation;
 //styled-components
 
 const StyledFooter = styled.footer`
-  position: relative;
-  display: center;
+border-radius: 0.7rem;
+position: fixed;
+left: 0;
+bottom: 3%;
+width: 100%;
+height: 10%;
+color: white;
+background-color: #f0fff0;
+text-align: center;
   border: 5px solid lightblue;
   border-radius: 0, 7em;
   border-bottom-color: #008080;
-  color: papayawhip;
-  background-color: white;
 `;
 const StyledNav = styled.nav`
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
 `;
 const StyledNextLink = styled(Link)`
   font-weight: bold;
   text-decoration: none;
-  border-radius: 1rem;
+  border-radius: 0.7rem;
   &.active {
     background-color: pink;
   }
   padding: 10px;
   margin: 10px;
-  font-size: 0.8em;
-  background-color: white;
+  font-size: 1em;
   color: #008080;
-  border: 2px solid #008080;
   &:hover {
     background-color: #008080;
     color: white;

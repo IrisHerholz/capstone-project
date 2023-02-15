@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useState } from "react";
 import Link from "next/link";
+import Header from "../components/Header";
 
 export default function Landingpage() {
   const [output, setOutput] = useState("");
@@ -14,6 +15,7 @@ export default function Landingpage() {
   };
   return (
     <>
+   <Header />
       <form onSubmit={handleSubmit}>
         <StyledSection>
           <StyledLegend>Where is your journey going?</StyledLegend>
@@ -36,7 +38,7 @@ export default function Landingpage() {
           </StyledLink>
         </StyledSection>
       </form>
-    </>
+</>
   );
 }
 //styled-component
@@ -44,35 +46,39 @@ const StyledLegend = styled.legend`
   font-weight: bold;
 `;
 const StyledSection = styled.section`
-  margin-top: 80px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+margin-top: 15%;
+margin-left: 5%;
+margin-right: 5%;
+display: flex;
+flex-direction: column;
+padding: 20px;
+border-radius: 30px;
   text-align: center;
-  font-size: 1.2em;
-  gap: 1rem;
+  box-shadow: 10px 10px 15px silver;
+  font-size: 1em;
+  gap: 0.9em;
 `;
 const StyledButton = styled.button`
-  padding: 10px;
-  margin: 10px;
-  font-size: 0.8em;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 1rem;
-  background-color: white;
-  color: #008080;
-  border: 2px solid #008080;
-  &:hover {
-    background-color: #008080;
-    color: white;
-    cursor: pointer;
+padding: 5px;
+font-size: 1em;
+border-radius: 0.7rem;
+background-color: white;
+color: #008080;
+border: 2px solid #008080;
+&:hover {
+  background-color: #008080;
+  color: white;
+  cursor: pointer;
   }
 `;
 
 const StyledLink = styled(Link)`
   padding: 1em;
   margin: 1em;
-  font-size: 1.5em;
+  font-size: 1.7em;
+  color: hotpink;
+  border-radius: 4px;
   font-weight: bold;
   border: lightblue dotted;
+
 `;

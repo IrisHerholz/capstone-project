@@ -42,6 +42,10 @@ export default function EntryListHome() {
       oldJournalEntries.filter((journalEntry) => journalEntry.id !== id)
     );
   }
+  function handleOpenEditForm(id) {
+    const entryToEdit = journalEntries.find((entry) => entry.id === id);
+    setEditingEntry(entryToEdit);
+  }
   function handleCloseEditForm() {
     setEditingEntry(null);
   }
@@ -65,10 +69,9 @@ export default function EntryListHome() {
               >
                 Delete
               </StyledButton>
-
               <StyledButton
                 type="button"
-                onClick={() => setEditingEntry(journalEntry)}
+              onClick={() => handleOpenEditForm(journalEntry.id)}
               >
                 Edit
               </StyledButton>
@@ -77,7 +80,6 @@ export default function EntryListHome() {
       </section>
       {editingEntry && (
         <EditFormWrapper>
-          <StyledHeader>Edit Entry</StyledHeader>
           <FormComponent
             onSubmitEvent={handleEditJournalEntry}
             initialEntry={editingEntry}
@@ -91,30 +93,43 @@ export default function EntryListHome() {
   );
 }
 
-const StyledEntry = styled.li`
-  display: flex;
+const StyledEntry = styled.form`
+  border-radius: 70px 30px;
+  margin: 1px;
   text-align: center;
-  flex-direction: column;
+  font-size: 0.6rem;
+  text-align: center;
+  border: 5px solid lightblue;
+  border-radius: 0.7rem;
+  border-bottom-color: #008080;
+  background-color: #f0fff0;
 `;
 const StyledHeader = styled.h2`
+font-size: 1.5em;
+  left: 0;
+  top: 2%;
+  width: 100%;
   text-align: center;
+  border: 5px solid lightblue;
+  border-radius: 0.7rem;
+  border-bottom-color: #008080;
+  background-color: #f0fff0;
 `;
 const EditFormWrapper = styled.div`
-  position: fixed;
-  top: 5px;
-  bottom: 40px;
+  position: absolute;
   width: 100%;
-  height: 100%;
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  background-color: lightpink;
-  font-weight: bold;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  margin-bottom: 200%;
+  font-size: 0.9em;
+  background-color: white;
 `;
+
 const StyledButton = styled.button`
-  padding: 10px;
   margin: 10px;
-  font-size: 0.6em;
+  font-size: 0.9em;
   font-weight: bold;
   border-radius: 1rem;
   background-color: white;
@@ -122,6 +137,6 @@ const StyledButton = styled.button`
   border: 2px solid #008080;
   &:hover {
     background-color: #008080;
-    color: white;
+    color: lightpink;
   }
 `;

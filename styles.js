@@ -4,16 +4,13 @@ export default createGlobalStyle`
   *,
   *::before,
   *::after {
-    box-sizing: border-box;
-         font-family: 'Arial';
-color: #008080;   
-background-color: #f5fffa; 
-
-
+     box-sizing: border-box;
+    font-style: ;
+font-family: 'Arial';  
   body { 
-    color: #008080;   
+    color: #008080;       
   }
-  main { 
+  main {
     margin: auto;
     margin-bottom: 5rem;
     max-width: 700px;
