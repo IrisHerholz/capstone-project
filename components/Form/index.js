@@ -5,7 +5,7 @@ import { nanoid } from "nanoid";
 
 export default function FormComponent({ onSubmitEvent = () => {}, cityname }) {
   const router = useRouter();
-  
+
   const [city, setCity] = useState(router?.query?.output);
 
   function handleSubmit(event) {
@@ -16,6 +16,7 @@ export default function FormComponent({ onSubmitEvent = () => {}, cityname }) {
     onSubmitEvent({
       id: nanoid(),
       destination: cityname?.output,
+      destination: data.destination,
       from: data.from,
       to: data.to,
       entryTitle: data.entryTitle,
@@ -62,7 +63,7 @@ export default function FormComponent({ onSubmitEvent = () => {}, cityname }) {
           pattern="^[^\sa0-9].*$"
           required
         />
- <StyledButton type="submit">submit</StyledButton>
+        <StyledButton type="submit">submit</StyledButton>
       </StyledForm>
     </>
   );

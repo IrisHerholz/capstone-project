@@ -56,7 +56,7 @@ export default function EntryListHome() {
   return (
     <>
       <StyledHeader>List of Entries</StyledHeader>
-      <ul>
+      <section>
         {journalEntries &&
           journalEntries.map((journalEntry) => (
             <StyledEntry key={journalEntry.id}>
@@ -80,10 +80,11 @@ export default function EntryListHome() {
               </StyledButton>
             </StyledEntry>
           ))}
-      </ul>
+      </section>
+
       {editingEntry && (
         <EditFormWrapper>
-          <h3>Edit Entry</h3>
+          <StyledHeader>Edit Entry</StyledHeader>
           <FormComponent
             onSubmitEvent={handleEditJournalEntry}
             onCancelEvent={handleCloseEditForm}
@@ -110,20 +111,18 @@ const EditFormWrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  width: 50%;
-  height: 50%;
+  width: 100%;
+  height: 90%;
   display: flex;
-  text-align: center;
+  text-align: center;  flex-direction: column;
   background-color: lightpink;
   font-weight: bold;
 `;
-
 const StyledButton = styled.button`
   padding: 10px;
   margin: 10px;
-  font-size: 0.8em;
+  font-size: 0.6em;
   font-weight: bold;
-  text-decoration: none;
   border-radius: 1rem;
   background-color: white;
   color: #008080;
